@@ -155,9 +155,9 @@ vidIQ offers an MCP connector with keyword and competitor data, which Showrunner
 
 ## What is tested, and what is not
 
-Tested: the engine and tools on Python 3.9, 3.11, 3.12 and 3.13 on Linux, with 76 tests, and the same 76 tests plus the four repo checks on Python 3.12 on Windows 11. The MCP server over stdio and HTTP with a protocol test suite. The ffmpeg commands against a real generated video. The calendar's `.ics` output against a calendar parser. Installing with `pip` and with `install.py` on Linux, and running a single unzipped skill with nothing else installed. Installing the Claude Code plugin from this repo on Windows 11 with Claude Code 2.1.219: the marketplace adds, all 24 skills install and the bundled engine starts.
+Tested: the engine and tools on Python 3.9 to 3.13 on Linux, with 76 tests. CI runs the same tests, the four repo checks and the zip build on every push, on Linux and on Python 3.12 on Windows and macOS, and all of them must pass. The tests and checks also passed on a Windows 11 machine. The MCP server over stdio and HTTP with a protocol test suite. The ffmpeg commands against a real generated video. The calendar's `.ics` output against a calendar parser. Installing with `pip` and with `install.py` on Linux, and running a single unzipped skill with nothing else installed. Installing the Claude Code plugin from this repo on Windows 11 with Claude Code 2.1.219: the marketplace adds, all 24 skills install and the bundled engine starts.
 
-**Not tested by the maintainers:** macOS (CI runs it best effort), `install.py` on Windows, a full Claude Code session using the installed plugin, and loading the skills inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app upload screen. They were written to each tool's published format. If one does not load, open an issue with what you saw.
+**Not tested by the maintainers:** `install.py` and the plugin install on macOS, `install.py` on Windows, a full Claude Code session using the installed plugin, and loading the skills inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app upload screen. They were written to each tool's published format. If one does not load, open an issue with what you saw.
 
 ## Contributing
 

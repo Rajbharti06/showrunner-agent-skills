@@ -14,4 +14,4 @@ First public version.
 - Custom GPT instructions and knowledge list.
 - 76 tests, a skill validator that checks every tool, flag and fact id the skills mention, and a prose linter.
 
-Known limits: not tested on macOS. On Windows, the tests and the Claude Code plugin install were checked, `install.py` was not. Not tested inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app's upload screen, or in a full Claude Code session. HTTP MCP supports a bearer token, not OAuth.
+Known limits: the tests and repo checks pass in CI on Linux, Windows and macOS. The Claude Code plugin install was checked on Windows only, and `install.py` on Linux only. Not tested inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app's upload screen, or in a full Claude Code session. HTTP MCP supports a bearer token, not OAuth.

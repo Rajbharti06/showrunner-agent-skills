@@ -9,8 +9,7 @@ jobs:
   test:
     name: Python ${{ matrix.python }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    # Linux is required to pass. Windows and macOS are best effort until someone confirms them.
-    continue-on-error: ${{ matrix.os != 'ubuntu-latest' }}
+    # Every job must pass. Windows and macOS were best effort until they passed on the first runs (November 2026).
     strategy:
       fail-fast: false
       matrix:
