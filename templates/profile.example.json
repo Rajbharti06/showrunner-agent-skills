@@ -1,0 +1,30 @@
+{
+  "name": "Example Creator",
+  "niche": "interview preparation for junior developers",
+  "audience": {
+    "who": "final-year students and career changers applying for their first developer job",
+    "region": "India and Europe",
+    "languages": ["English", "Hinglish"],
+    "level": "beginner"
+  },
+  "goal": "audience",
+  "stage": "zero",
+  "platforms": ["youtube", "instagram"],
+  "hub": "youtube",
+  "hours_per_week": 5,
+  "on_camera": true,
+  "tools": ["phone camera", "CapCut", "Canva"],
+  "pillars": ["interview mistakes", "projects that get callbacks", "tools and workflow"],
+  "proof": [
+    "Sat in on 41 interviews as a panel member",
+    "Reviewed 200 student resumes"
+  ],
+  "voice": {
+    "banned_phrases": ["game-changer", "unlock your potential", "let's dive in"],
+    "banned_chars": [],
+    "notes": "Short sentences. Says 'honestly' and 'here is the thing'. Mixes Hindi and English when explaining, never when giving numbers."
+  },
+  "content_type": "short_video",
+  "best_times": {},
+  "lessons": []
+}

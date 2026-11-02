@@ -1,0 +1,57 @@
+{
+ "title": "Profile makeover",
+ "duration": "1 day",
+ "when": "Your profiles do not say who you help or why to follow.",
+ "summary": "Audit each profile, write one positioning line, rewrite everywhere, choose pinned content.",
+ "steps": [
+  {
+   "id": "audit",
+   "title": "Audit every profile",
+   "skill": "sr-profile-audit",
+   "do": "Score each profile out of 100 and list what lost points.",
+   "gate": "approve",
+   "produces": "scores"
+  },
+  {
+   "id": "line",
+   "title": "Write the positioning line",
+   "skill": "sr-strategy",
+   "do": "One sentence: who you help, how, and why you. Under 15 words.",
+   "gate": "approve",
+   "produces": "line"
+  },
+  {
+   "id": "rewrite",
+   "title": "Rewrite name, bio, link",
+   "skill": "sr-profile-audit",
+   "do": "Fix in order of points recovered. Keep search terms in the name field.",
+   "gate": "approve",
+   "produces": "new profile copy"
+  },
+  {
+   "id": "pins",
+   "title": "Choose pinned content",
+   "skill": "sr-ideas",
+   "do": "Three pieces that show what the account is about. Make them if you have none.",
+   "gate": "approve",
+   "produces": "pins"
+  },
+  {
+   "id": "apply",
+   "title": "Apply the changes",
+   "skill": "showrunner",
+   "do": "You update the profiles.",
+   "gate": "human",
+   "produces": "updated profiles"
+  },
+  {
+   "id": "reaudit",
+   "title": "Re-audit",
+   "skill": "sr-profile-audit",
+   "do": "Score again. Anything under 70 gets a second pass.",
+   "gate": "approve",
+   "produces": "new scores"
+  }
+ ],
+ "id": "profile-makeover"
+}

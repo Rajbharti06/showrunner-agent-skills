@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: Python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    # Linux is required to pass. Windows and macOS are best effort until someone confirms them.
+    continue-on-error: ${{ matrix.os != 'ubuntu-latest' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        include:
+          - os: windows-latest
+            python: "3.12"
+          - os: macos-latest
+            python: "3.12"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Skills match the spec and the engine
+        run: python scripts/validate_skills.py
+      - name: Prose lint
+        run: python scripts/lint_prose.py
+      - name: Shims in sync
+        run: python scripts/sync_shims.py --check
+      - name: Generated references up to date
+        run: python scripts/gen_refs.py --check
+      - name: Build zips and run one on its own
+        run: |
+          python scripts/build_dist.py
+          python scripts/smoke_dist.py

@@ -1,0 +1,10 @@
+{
+ "version": 1,
+ "source": "default",
+ "specificity": 0.3,
+ "frontload": 0.2,
+ "address": 0.15,
+ "curiosity": 0.15,
+ "stakes": 0.1,
+ "brevity": 0.1
+}

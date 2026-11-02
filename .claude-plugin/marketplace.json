@@ -1,0 +1,13 @@
+{
+  "name": "showrunner",
+  "owner": {
+    "name": "Raj Bharti"
+  },
+  "plugins": [
+    {
+      "name": "showrunner",
+      "source": "./",
+      "description": "24 skills and a zero-dependency engine for growing a channel on any major platform. Plans and writes, never posts."
+    }
+  ]
+}

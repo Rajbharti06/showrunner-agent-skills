@@ -1,0 +1,34 @@
+name: Bug report
+description: A tool crashed, printed something wrong, or a skill promised something the tools do not do.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The exact command or the prompt you gave your assistant, and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output or error
+      render: text
+  - type: input
+    id: where
+    attributes:
+      label: Where are you running it?
+      description: For example Claude Code, ChatGPT (plan), Cursor, Codex, Gemini CLI, Claude Desktop, plain command line.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Python version and operating system
+      description: Output of `python --version`, plus Windows, macOS or Linux.
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of `showrunner doctor` (or `python skills/showrunner/scripts/sr.py doctor` if you did not pip install)
+      render: text

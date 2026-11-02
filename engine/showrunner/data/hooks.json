@@ -1,0 +1,567 @@
+{
+ "version": 1,
+ "formulas": [
+  {
+   "id": "specific-loss",
+   "name": "The Specific Loss",
+   "template": "I lost {amount or time} because of {small, avoidable thing}.",
+   "example": "I wasted four months on a portfolio nobody opened.",
+   "purpose": "Stakes and honesty in one line. The viewer stays to learn the avoidable thing.",
+   "ruins": "A vague loss ('I lost a lot'), or never naming the thing.",
+   "rx": [
+    "\\b(i|we)\\s+(lost|wasted|burned|blew|threw away|spent)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-receipt",
+   "name": "The Receipt",
+   "template": "In {time} I went from {A} to {B}. One change did it.",
+   "example": "In 90 days I went from 12 views a video to 40,000. One change did it.",
+   "purpose": "Proof first, method second. Works when the numbers are real and checkable.",
+   "ruins": "Numbers you cannot back up. Hiding the one change until the end.",
+   "rx": [
+    "\\bwent\\s+from\\b.*\\bto\\b",
+    "\\bin\\s+\\d+\\s+(days|weeks|months|years)\\b.*\\b(i|we)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "nobody-tells-you",
+   "name": "Nobody Tells You",
+   "template": "Nobody tells you {truth about this stage}.",
+   "example": "Nobody tells you the first thirty videos are practice.",
+   "purpose": "Insider permission. The viewer feels they are getting what the guides left out.",
+   "ruins": "Using it for something everybody already says.",
+   "rx": [
+    "\\b(no\\s?one|nobody)\\s+(tells|told|talks|warns|teaches|explains|mentions)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "contrarian-flip",
+   "name": "The Contrarian Flip",
+   "template": "{Popular advice} is wrong. Do {opposite} instead.",
+   "example": "Posting every day is slowing your channel down. Post twice a week and do this instead.",
+   "purpose": "Pattern interrupt. Disagreeing with a belief the viewer holds forces a decision to stay.",
+   "ruins": "A flip with no evidence or no better alternative.",
+   "rx": [
+    "\\b(is|are)\\s+(wrong|a lie|a myth|overrated|useless|backwards|dead)\\b",
+    "\\bstop\\s+\\w+ing\\b.*\\binstead\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "biggest-mistake",
+   "name": "The Biggest Mistake",
+   "template": "The biggest mistake {audience} make with {topic} is {x}.",
+   "example": "The biggest mistake first-year students make with scholarships is applying late.",
+   "purpose": "Self-diagnosis. People watch to check whether they are making it.",
+   "ruins": "A mistake nobody actually makes.",
+   "rx": [
+    "\\b(biggest|worst|most common|number one|#1)\\s+mistake"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "numbered-list",
+   "name": "The Numbered List",
+   "template": "{N} {things} I wish I knew before {milestone}.",
+   "example": "Five things I wish I knew before my first cybersecurity interview.",
+   "purpose": "A visible finish line. The viewer knows how long the payoff takes.",
+   "ruins": "Padding to hit the number. A list with no strongest item first.",
+   "rx": [
+    "^\\s*(\\d{1,2}|three|four|five|six|seven|eight|nine|ten)\\s+(things|ways|reasons|lessons|mistakes|tips|rules|habits|tools|signs|steps|questions|books|apps)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-statistic",
+   "name": "The Statistic",
+   "template": "{X}% of {group} {surprising behavior}.",
+   "example": "Nine out of ten applicants never read the scholarship rules.",
+   "purpose": "A number the viewer wants to be on the right side of.",
+   "ruins": "An invented or unsourced figure.",
+   "rx": [
+    "\\b\\d{1,3}(\\.\\d+)?\\s?(%|percent)\\s+of\\b",
+    "\\b(one|two|three|four|five|nine)\\s+(in|out of)\\s+(ten|\\d+)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "compressed-timeline",
+   "name": "The Compressed Timeline",
+   "template": "How I {result} in {short time} with {constraint}.",
+   "example": "How I learned enough networking to pass an exam in 21 days with no bootcamp.",
+   "purpose": "Promises a method inside a constraint. The constraint is what makes it feel possible.",
+   "ruins": "A timeline you did not actually hit.",
+   "rx": [
+    "\\bhow\\s+(i|we)\\b.*\\b(in|within|under)\\s+\\d+\\s+(days|weeks|months|years|hours|minutes)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-warning",
+   "name": "The Warning",
+   "template": "Do not {action} until you know {thing}.",
+   "example": "Do not send your visa documents until you check this one stamp.",
+   "purpose": "Loss aversion. A warning is more urgent than a tip.",
+   "ruins": "A warning with nothing at stake.",
+   "rx": [
+    "\\b(do not|don'?t|never)\\s+\\w+.*\\b(until|before)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "hidden-mechanism",
+   "name": "The Hidden Mechanism",
+   "template": "Here is why {phenomenon} really happens.",
+   "example": "Here is why your best videos get the fewest views in the first hour.",
+   "purpose": "Explains something the viewer has seen but could not explain.",
+   "ruins": "An explanation that is just a restatement.",
+   "rx": [
+    "\\b(here'?s|this is)\\s+(why|how|what)\\b",
+    "\\bthe\\s+real\\s+reason\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "before-after",
+   "name": "Before and After",
+   "template": "Before: {pain}. After: {gain}. The difference was {one change}.",
+   "example": "Before: forty edits per video. After: six. The difference was one template.",
+   "purpose": "A clear contrast the viewer can picture.",
+   "ruins": "No believable bridge between the two states.",
+   "rx": [
+    "\\bbefore\\b.*\\bafter\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-callout",
+   "name": "The Callout",
+   "template": "If you are a {specific person} who {specific situation}, watch this.",
+   "example": "If you are applying abroad with a family budget, this is the order to do things in.",
+   "purpose": "Filters in the right viewer and tells everyone else to move on, which raises retention.",
+   "ruins": "A callout so broad it names everyone.",
+   "rx": [
+    "^\\s*if\\s+you('?re| are)?\\b",
+    "\\bfor\\s+(every\\s+)?\\w+\\s+(who|that)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-confession",
+   "name": "The Confession",
+   "template": "I am embarrassed to admit I {did X}.",
+   "example": "I am embarrassed to admit I failed my first security lab three times.",
+   "purpose": "Lowers the viewer's guard. Honesty reads as credibility.",
+   "ruins": "A fake flaw that is really a brag.",
+   "rx": [
+    "\\b(i'?m|i am)\\s+(embarrassed|ashamed|not proud)",
+    "\\bi\\s+(have to|need to|must)\\s+(admit|confess)\\b",
+    "\\bconfession\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "i-tried",
+   "name": "I Tried It So You Do Not Have To",
+   "template": "I tried {thing} for {time} so you do not have to.",
+   "example": "I tried waking at 5am for thirty days so you do not have to.",
+   "purpose": "Borrowed experience. The viewer gets the result without the cost.",
+   "ruins": "Reporting a result you did not actually test.",
+   "rx": [
+    "\\bi\\s+(tried|tested|did)\\b.*\\bfor\\s+\\d+\\s+(days|weeks|months)\\b",
+    "\\bso\\s+you\\s+don'?t\\s+have\\s+to\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "unpopular-opinion",
+   "name": "Unpopular Opinion",
+   "template": "Unpopular opinion: {claim}.",
+   "example": "Unpopular opinion: most coding tutorials teach you to copy, not to think.",
+   "purpose": "Invites agreement or argument, both of which are engagement.",
+   "ruins": "An opinion nobody disagrees with.",
+   "rx": [
+    "\\b(unpopular|hot)\\s+(opinion|take)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "question-with-teeth",
+   "name": "The Question With Teeth",
+   "template": "Why do {group} always {surprising behavior}?",
+   "example": "Why do the best students quietly stop using the library?",
+   "purpose": "A question the viewer cannot answer in their head, so they wait for it.",
+   "ruins": "A yes or no question. A question you answer in the next sentence.",
+   "rx": [
+    "^\\s*(why|how come)\\b.*\\?"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "whats-hidden",
+   "name": "What They Will Not Tell You",
+   "template": "What {authority} will not tell you about {topic}.",
+   "example": "What universities will not tell you about hidden fees.",
+   "purpose": "Taps distrust of institutions. Strong, but only if the reveal is real.",
+   "ruins": "Teasing a secret that turns out to be common knowledge.",
+   "rx": [
+    "\\b(won'?t|will not|don'?t want you to|doesn'?t want you to)\\s+(tell|know|say)",
+    "\\bwhat\\s+they\\s+(don'?t|do not)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "myth-bust",
+   "name": "The Myth Bust",
+   "template": "You have been told {myth}. Here is what actually happens.",
+   "example": "You have been told hashtags get you reach. Here is what actually happens.",
+   "purpose": "Replaces a belief with a better one. Strong for educational channels.",
+   "ruins": "Busting a myth nobody believed.",
+   "rx": [
+    "\\b(myth|you'?ve been told|you were told|everyone says|they say)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-clock",
+   "name": "The Clock",
+   "template": "You have {time} to {action} before {consequence}.",
+   "example": "You have twelve days to claim this before the deadline closes.",
+   "purpose": "A real deadline creates a reason to watch now.",
+   "ruins": "A fake deadline. Viewers learn quickly.",
+   "rx": [
+    "\\byou\\s+(have|only have)\\s+\\d+\\s+(days|weeks|months|hours|minutes|seconds)\\b",
+    "\\bbefore\\s+(it'?s|it is)\\s+too\\s+late\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-teardown",
+   "name": "The Teardown",
+   "template": "I broke down why {thing} got {number} views.",
+   "example": "I broke down why this explainer got two million views with no face on screen.",
+   "purpose": "Lets the viewer borrow a pattern that already worked.",
+   "ruins": "Praising the thing instead of finding the mechanism.",
+   "rx": [
+    "\\b(broke down|break down|tore down|teardown|reverse[- ]engineer)"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-shortcut",
+   "name": "The Shortcut",
+   "template": "The fastest way to {outcome} if you are {constraint}.",
+   "example": "The fastest way to learn Linux if you only have evenings.",
+   "purpose": "Speaks to impatience and a real limit on time or money.",
+   "ruins": "A shortcut that skips the hard part without saying so.",
+   "rx": [
+    "\\b(fastest|easiest|quickest|simplest|laziest|cheapest)\\s+way\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "cold-open-story",
+   "name": "The Cold Open",
+   "template": "{Time and place}. I was {doing something ordinary} when {the unexpected thing}.",
+   "example": "Last March. I was submitting a form when the portal refused my passport.",
+   "purpose": "Starts inside a scene. The viewer wants to know what happens.",
+   "ruins": "Scene-setting that takes more than one sentence.",
+   "rx": [
+    "^\\s*(yesterday|last (night|week|month|year|march|april|may|june|july|august|september|october|november|december|january|february)|this morning|at \\d+\\s?(am|pm)|it was \\d)"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "head-to-head",
+   "name": "Head to Head",
+   "template": "{A} vs {B}: I tested both for {time}.",
+   "example": "Paper notes vs a tablet: I tested both for a full semester.",
+   "purpose": "Built-in tension. The viewer picks a side before the answer.",
+   "ruins": "A comparison with no clear criteria.",
+   "rx": [
+    "\\bvs\\.?\\b",
+    "\\bversus\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "beginner-trap",
+   "name": "The Beginner Trap",
+   "template": "If you are just starting {skill}, avoid {trap}.",
+   "example": "If you are just starting with cybersecurity, avoid buying five courses.",
+   "purpose": "Protects a vulnerable viewer. Trust builds fast.",
+   "ruins": "Warning against something that is not actually a trap.",
+   "rx": [
+    "\\b(beginners?|newbies?|just starting|first[- ]time)\\b.*\\b(avoid|stop|never|mistake|trap|don'?t)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "you-dont-need",
+   "name": "You Do Not Need It",
+   "template": "You do not need {thing people think they need} to {outcome}.",
+   "example": "You do not need a camera upgrade to make videos people finish.",
+   "purpose": "Removes a barrier. High share rate among beginners.",
+   "ruins": "Telling people they do not need something they really do need.",
+   "rx": [
+    "\\byou\\s+(don'?t|do not)\\s+need\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-one-thing",
+   "name": "The One Thing",
+   "template": "If I could teach only one thing about {topic}, it would be {x}.",
+   "example": "If I could teach only one thing about interviews, it would be the first ninety seconds.",
+   "purpose": "Forces prioritisation. The viewer gets the 80 percent.",
+   "ruins": "Naming one thing and then listing five.",
+   "rx": [
+    "\\bif\\s+i\\s+(could|had to|was only)\\b.*\\b(one|only)\\b",
+    "\\bthe\\s+one\\s+(thing|habit|rule|skill)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "exact-process",
+   "name": "The Exact Process",
+   "template": "This is my exact {process} for {outcome}.",
+   "example": "This is my exact checklist for turning one video into five posts.",
+   "purpose": "Specific and replicable, which is rare enough to earn saves.",
+   "ruins": "Calling it exact and then being vague.",
+   "rx": [
+    "\\b(my|the)\\s+exact\\b",
+    "\\bstep[- ]by[- ]step\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "named-rule",
+   "name": "The Named Rule",
+   "template": "The {N}-{unit} rule for {situation}.",
+   "example": "The ten-minute rule for starting work you are avoiding.",
+   "purpose": "A memorable handle people can repeat to someone else.",
+   "ruins": "A rule that is really three rules.",
+   "rx": [
+    "\\bthe\\s+\\d+[- ](second|minute|hour|day|week|word|step|question)s?\\s+(rule|test|trick|method)\\b",
+    "\\bthe\\s+(three|five|ten|two|four)[- ](second|minute|hour|day|week|word|step|question)s?\\s+(rule|test|trick|method)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-forecast",
+   "name": "The Forecast",
+   "template": "By {year}, {prediction}. Here is what to do now.",
+   "example": "By 2028 most entry-level security work will look different. Here is what to do now.",
+   "purpose": "Future stakes plus a present action.",
+   "ruins": "A prediction with no action attached.",
+   "rx": [
+    "\\bin\\s+(20\\d\\d|five years|ten years)\\b.*\\b(will|won'?t)\\b",
+    "\\bby\\s+20\\d\\d\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "someone-elses-result",
+   "name": "Someone Else's Result",
+   "template": "My {student, client, friend} {result} using {method}.",
+   "example": "My cousin cracked a scholarship interview using one practice rule.",
+   "purpose": "Social proof without bragging. Easier to believe than your own win.",
+   "ruins": "Results you cannot name, even anonymously.",
+   "rx": [
+    "\\bmy\\s+(student|client|friend|brother|sister|mom|dad|roommate|cousin|mentor|team)\\b.*\\b(got|made|hit|went|landed|passed|reached|cracked)\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-superlative",
+   "name": "The Superlative",
+   "template": "The {best or worst} {thing} I have ever {verb}.",
+   "example": "The worst advice I have ever followed about college applications.",
+   "purpose": "Extreme claims get attention. The story under it earns the retention.",
+   "ruins": "A superlative the story does not support.",
+   "rx": [
+    "\\bthe\\s+(best|worst|weirdest|smartest|dumbest|most \\w+)\\s+\\w+(\\s+\\w+)?\\s+(i'?ve|i have)\\s+ever\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  },
+  {
+   "id": "the-quiet-part",
+   "name": "The Quiet Part",
+   "template": "Nobody says this out loud, but {truth}.",
+   "example": "Nobody says this out loud, but most scholarship essays are won in the first two lines.",
+   "purpose": "Permission to hear something uncomfortable.",
+   "ruins": "A truth that is not uncomfortable.",
+   "rx": [
+    "\\b(says|say)\\s+this\\s+out\\s+loud\\b",
+    "\\bquiet\\s+part\\b"
+   ],
+   "platforms": [
+    "short",
+    "long",
+    "text"
+   ]
+  }
+ ],
+ "dealbreakers": [
+  {
+   "id": "greeting",
+   "rx": "^\\s*(hey|hi|hello|yo|what'?s up|sup|good (morning|evening|afternoon)|welcome|namaste)\\b",
+   "message": "Greeting. Nobody opened the feed to be greeted."
+  },
+  {
+   "id": "begging",
+   "rx": "\\b(stop\\s+scrolling|wait\\s+for\\s+it|watch\\s+(till|until)\\s+the\\s+end|you\\s+won'?t\\s+believe)\\b",
+   "message": "Asking for attention proves you have not earned it. Say the thing instead."
+  },
+  {
+   "id": "preamble",
+   "rx": "\\b(in this video|in today'?s video|today i('?m| am| want| wanted)|today we('?re| are| will)|i wanted to (talk|share|show)|let me (tell|show) you about|before we (start|begin|get started)|welcome back)\\b",
+   "message": "Preamble. Announcing the video is not the video."
+  },
+  {
+   "id": "sub-begging",
+   "rx": "\\b(like and subscribe|smash (that|the) like|don'?t forget to (like|subscribe|follow))\\b",
+   "message": "A subscribe plea in the hook. Earn it at the end."
+  }
+ ],
+ "warnings": [
+  {
+   "id": "hype-words",
+   "rx": "\\b(insane|crazy|mind[- ]?blowing|game[- ]?changer|shocking|unbelievable|life[- ]?changing)\\b",
+   "message": "Hype word. Replace with the specific thing that is crazy."
+  },
+  {
+   "id": "hedge",
+   "rx": "\\b(kind of|sort of|maybe|i think|i guess|a little bit)\\b",
+   "message": "Hedging in the hook. State it like you mean it or cut it."
+  }
+ ]
+}

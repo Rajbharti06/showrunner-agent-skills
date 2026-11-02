@@ -1,0 +1,31 @@
+account,url,views,likes,hook,platform,posted
+@acct_a,https://example.com/acct_a/1,310000,14319,I read 41 interview scorecards. 33 failed the same way in 5 minutes.,instagram,2026-07-13
+@acct_a,https://example.com/acct_a/2,18000,1125,Stop memorizing algorithms. Do this instead.,instagram,2026-06-27
+@acct_a,https://example.com/acct_a/3,22000,1249,My code review habit that cut bugs by 60%,instagram,2026-08-19
+@acct_a,https://example.com/acct_a/4,14000,460,Three VS Code settings I turn on first,instagram,2026-10-07
+@acct_a,https://example.com/acct_a/5,9500,302,POV: your first standup as a junior dev,instagram,2026-09-14
+@acct_a,https://example.com/acct_a/6,41000,1373,Why your portfolio gets ignored (it is not the projects),instagram,2026-06-18
+@acct_a,https://example.com/acct_a/7,6000,307,Here is a tip for learning Python,instagram,2026-10-04
+@acct_a,https://example.com/acct_a/8,205000,15861,I got rejected 52 times before this one email worked,instagram,2026-10-02
+@acct_a,https://example.com/acct_a/9,3100,182,"Hey guys, welcome back to my channel",instagram,2026-09-02
+@acct_a,https://example.com/acct_a/10,87000,6856,The salary question you should never answer first,instagram,2026-06-18
+@acct_a,https://example.com/acct_a/11,11000,802,Debugging in 4 steps,instagram,2026-08-14
+@acct_a,https://example.com/acct_a/12,120000,4465,What the interviewer writes down when you stay silent,instagram,2026-06-19
+@acct_b,https://example.com/acct_b/1,25000,1135,Nobody tells you this about your first dev job,instagram,2026-07-04
+@acct_b,https://example.com/acct_b/2,64000,3781,I tracked every hour for 30 days. 11 went to meetings I should have skipped.,instagram,2026-07-12
+@acct_b,https://example.com/acct_b/3,31000,1081,"Rust vs Go, which should you learn?",instagram,2026-06-19
+@acct_b,https://example.com/acct_b/4,5200,171,Day 14 of learning in public,instagram,2026-07-16
+@acct_b,https://example.com/acct_b/5,78000,4993,The one-line commit message rule that saved our team,instagram,2026-09-25
+@acct_b,https://example.com/acct_b/6,48000,2193,Is it too late to switch careers at 35?,instagram,2026-10-15
+@acct_b,https://example.com/acct_b/7,2500,120,Quick tip,instagram,2026-07-26
+@acct_b,https://example.com/acct_b/8,52000,2027,How I would learn to code in 2026 if I started today,instagram,2026-07-03
+@acct_b,https://example.com/acct_b/9,93000,5461,This mistake cost me 6 months,instagram,2026-10-16
+@acct_b,https://example.com/acct_b/10,4100,302,Tech interview tips,instagram,2026-09-10
+@acct_c,https://example.com/acct_c/1,154000,9308,I asked 12 senior engineers what they wish they knew at 25,instagram,2026-06-04
+@acct_c,https://example.com/acct_c/2,7800,433,Imposter syndrome is real,instagram,2026-07-25
+@acct_c,https://example.com/acct_c/3,260000,12246,Why I quit my 140k job and what happened next,instagram,2026-09-14
+@acct_c,https://example.com/acct_c/4,12500,399,5 books every developer should read,instagram,2026-06-25
+@acct_c,https://example.com/acct_c/5,42000,2431,Let me explain how DNS actually works in 30 seconds,instagram,2026-08-11
+@acct_c,https://example.com/acct_c/6,36000,2331,Watch this before your next system design round,instagram,2026-10-16
+@acct_c,https://example.com/acct_c/7,1900,112,New video is up!,instagram,2026-09-03
+@acct_c,https://example.com/acct_c/8,58000,4175,The 2-minute rule that fixed my procrastination,instagram,2026-08-16

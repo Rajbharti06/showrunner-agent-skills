@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.tmp/
+*.tar.gz
+.DS_Store
+Thumbs.db
+# local Showrunner state (profile, runs, experiment logs) lives in ~/.showrunner, never in the repo
+.showrunner/

@@ -1,0 +1,29 @@
+name: Idea or request
+description: A skill, a playbook, a platform, or a tool you wish existed.
+title: "idea: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What are you trying to do?
+      description: Start with the job, not the feature. Who is doing it and what goes wrong today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Is it a
+      options:
+        - New skill
+        - Change to a skill
+        - New playbook
+        - New or changed tool
+        - New platform
+        - Something else
+    validations:
+      required: true

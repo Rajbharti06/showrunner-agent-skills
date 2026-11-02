@@ -1,0 +1,81 @@
+{
+ "title": "YouTube video launch",
+ "duration": "3 to 7 days",
+ "when": "You are making a long-form YouTube video and want the packaging and retention right.",
+ "summary": "Validate the topic, design the title and thumbnail first, script for retention, edit, upload, test, read the curve.",
+ "steps": [
+  {
+   "id": "validate",
+   "title": "Validate the topic",
+   "skill": "sr-seo",
+   "do": "Check there is search demand or outlier proof for this topic. Pick the target keyword.",
+   "gate": "approve",
+   "produces": "keyword + proof"
+  },
+  {
+   "id": "package",
+   "title": "Title and thumbnail first",
+   "skill": "sr-title-thumbnail",
+   "do": "Three title and thumbnail pairs. Check they do not repeat each other.",
+   "gate": "approve",
+   "produces": "packaging"
+  },
+  {
+   "id": "script",
+   "title": "Script for retention",
+   "skill": "sr-script",
+   "do": "Cold open that pays off the title, open loops, a reason to stay at each dip.",
+   "gate": "approve",
+   "produces": "script"
+  },
+  {
+   "id": "edit",
+   "title": "Edit plan",
+   "skill": "sr-edit-plan",
+   "do": "Cut list, pacing notes, caption file.",
+   "gate": "human",
+   "produces": "edit"
+  },
+  {
+   "id": "meta",
+   "title": "Description, chapters, tags",
+   "skill": "sr-seo",
+   "do": "First 150 characters, chapters, no more than 15 hashtags.",
+   "gate": "approve",
+   "produces": "metadata"
+  },
+  {
+   "id": "polish",
+   "title": "Humanize and policy check",
+   "skill": "sr-policy-check",
+   "do": "AI disclosure toggle if the video has realistic synthetic content. Sponsorship disclosure. Music rights.",
+   "gate": "approve",
+   "produces": "checked"
+  },
+  {
+   "id": "upload",
+   "title": "Upload and set up Test & compare",
+   "skill": "showrunner",
+   "do": "You upload. Set up title and thumbnail variants in Studio if you have the feature.",
+   "gate": "human",
+   "produces": "published video"
+  },
+  {
+   "id": "read48",
+   "title": "Read the curve at 48 hours",
+   "skill": "sr-audit",
+   "do": "Export retention. Find the cliffs. Decide what the next video does differently.",
+   "gate": "data",
+   "produces": "retention read"
+  },
+  {
+   "id": "log",
+   "title": "Log the lesson",
+   "skill": "sr-growth-loop",
+   "do": "One line: what you changed, what happened, what you will do next.",
+   "gate": "data",
+   "produces": "log"
+  }
+ ],
+ "id": "youtube-video-launch"
+}

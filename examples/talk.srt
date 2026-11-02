@@ -1,0 +1,240 @@
+1
+00:00:00,500 --> 00:00:03,740
+Okay so, today I want to talk about the
+
+2
+00:00:03,800 --> 00:00:07,040
+biggest mistake I see junior developers make in interviews.
+
+3
+00:00:07,550 --> 00:00:10,790
+Last year I sat in on forty-one interviews at
+
+4
+00:00:10,850 --> 00:00:13,370
+a company with about two hundred people.
+
+5
+00:00:13,880 --> 00:00:17,120
+Thirty-three of those candidates made the exact same mistake
+
+6
+00:00:17,180 --> 00:00:18,980
+in the first five minutes.
+
+7
+00:00:19,490 --> 00:00:22,370
+And it has nothing to do with code.
+
+8
+00:00:23,780 --> 00:00:25,220
+Here is the mistake.
+
+9
+00:00:25,730 --> 00:00:28,970
+They start solving the problem before they understand it.
+
+10
+00:00:29,480 --> 00:00:31,280
+A candidate gets a prompt,
+
+11
+00:00:31,340 --> 00:00:33,500
+something like design a URL shortener,
+
+12
+00:00:33,560 --> 00:00:36,800
+and within ten seconds they are writing a database
+
+13
+00:00:36,860 --> 00:00:37,220
+schema.
+
+14
+00:00:37,730 --> 00:00:40,250
+The interviewer has not said a word.
+
+15
+00:00:40,760 --> 00:00:42,920
+Um, you know, it feels productive.
+
+16
+00:00:43,430 --> 00:00:44,870
+It looks like confidence.
+
+17
+00:00:46,880 --> 00:00:49,760
+It is actually the fastest way to fail.
+
+18
+00:00:51,170 --> 00:00:53,330
+Let me tell you about Priya.
+
+19
+00:00:53,840 --> 00:00:55,640
+Priya was a strong candidate,
+
+20
+00:00:55,700 --> 00:00:58,940
+she had two years of experience and a clean
+
+21
+00:00:59,000 --> 00:00:59,360
+portfolio.
+
+22
+00:00:59,870 --> 00:01:01,670
+She got the same prompt.
+
+23
+00:01:02,180 --> 00:01:04,340
+She stopped, looked at the interviewer,
+
+24
+00:01:04,400 --> 00:01:05,840
+and asked four questions.
+
+25
+00:01:06,350 --> 00:01:08,150
+How many links a day?
+
+26
+00:01:08,660 --> 00:01:10,100
+Does it need analytics?
+
+27
+00:01:10,610 --> 00:01:11,690
+Can links expire?
+
+28
+00:01:12,200 --> 00:01:13,640
+Who is the user?
+
+29
+00:01:14,150 --> 00:01:15,590
+That took ninety seconds.
+
+30
+00:01:16,100 --> 00:01:19,340
+The interviewer told me afterwards that was the moment
+
+31
+00:01:19,400 --> 00:01:21,200
+she decided to recommend her.
+
+32
+00:01:21,710 --> 00:01:24,950
+Priya got the offer, and she negotiated eleven percent
+
+33
+00:01:25,010 --> 00:01:26,450
+above the first number.
+
+34
+00:01:27,860 --> 00:01:31,100
+So here is what I want you to do.
+
+35
+00:01:31,610 --> 00:01:33,770
+Next time you get a prompt,
+
+36
+00:01:33,830 --> 00:01:36,710
+do not touch the keyboard for two minutes.
+
+37
+00:01:37,220 --> 00:01:40,460
+Ask questions until you can say the problem back
+
+38
+00:01:40,520 --> 00:01:41,600
+in one sentence.
+
+39
+00:01:42,110 --> 00:01:45,350
+Then write it down on the screen where the
+
+40
+00:01:45,410 --> 00:01:46,850
+interviewer can see it.
+
+41
+00:01:47,360 --> 00:01:49,520
+I call this the restate step,
+
+42
+00:01:49,580 --> 00:01:52,820
+and it works because it turns a test into
+
+43
+00:01:52,880 --> 00:01:53,600
+a conversation.
+
+44
+00:01:55,010 --> 00:01:58,250
+Now, there is a second part that nobody talks
+
+45
+00:01:58,310 --> 00:01:58,670
+about.
+
+46
+00:01:59,180 --> 00:02:02,420
+After you restate, pick one thing and say it
+
+47
+00:02:02,480 --> 00:02:05,720
+out loud: here is what I will build first,
+
+48
+00:02:05,780 --> 00:02:08,300
+and here is what I will skip.
+
+49
+00:02:08,810 --> 00:02:11,690
+Interviewers are not looking for a perfect system.
+
+50
+00:02:12,200 --> 00:02:15,440
+They are looking for someone who knows what to
+
+51
+00:02:15,500 --> 00:02:16,220
+leave out.
+
+52
+00:02:16,730 --> 00:02:19,970
+We hired a candidate who built a tiny version
+
+53
+00:02:20,030 --> 00:02:23,270
+in thirty minutes over a candidate who drew a
+
+54
+00:02:23,330 --> 00:02:25,130
+huge diagram and never finished.
+
+55
+00:02:26,540 --> 00:02:28,700
+If you only remember one thing,
+
+56
+00:02:28,760 --> 00:02:29,480
+remember this.
+
+57
+00:02:29,990 --> 00:02:32,510
+The first two minutes decide the interview.
+
+58
+00:02:33,020 --> 00:02:35,180
+Spend them on questions, not code.
+
+59
+00:02:35,690 --> 00:02:38,930
+Try it in your next mock interview and tell
+
+60
+00:02:38,990 --> 00:02:41,510
+me how it goes in the comments.
+

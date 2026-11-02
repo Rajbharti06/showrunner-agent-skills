@@ -1,0 +1,40 @@
+name: Platform fact is wrong, missing or out of date
+description: A limit, rule or policy in the facts database needs fixing. A link to a primary source makes this a five minute fix.
+title: "fact: "
+labels: ["facts"]
+body:
+  - type: input
+    id: fact_id
+    attributes:
+      label: Fact id, if it exists
+      description: For example youtube.hashtags.cap. Run `showrunner facts --platform youtube` (or `python skills/showrunner/scripts/sr.py facts --platform youtube`) to list them.
+  - type: textarea
+    id: what
+    attributes:
+      label: What should it say?
+      description: Say what is wrong and what the correct claim is, in the source's own words where you can.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: The platform's own help page or announcement if there is one. Otherwise the best report you have.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: What kind of source is it?
+      options:
+        - The platform itself (official)
+        - Someone reporting on the platform (reported)
+        - One analysis of data (study)
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date you checked it
+      description: YYYY-MM-DD

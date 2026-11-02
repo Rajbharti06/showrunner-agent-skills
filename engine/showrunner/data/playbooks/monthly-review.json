@@ -1,0 +1,73 @@
+{
+ "title": "Monthly review",
+ "duration": "2 hours",
+ "when": "Once a month, every month.",
+ "summary": "Export, post-mortem, outliers in your own work, experiments, platform changes, calibration, strategy update, next calendar.",
+ "steps": [
+  {
+   "id": "export",
+   "title": "Export the month",
+   "skill": "showrunner",
+   "do": "Download analytics from each platform you post on.",
+   "gate": "data",
+   "produces": "exports"
+  },
+  {
+   "id": "postmortem",
+   "title": "Post-mortem",
+   "skill": "sr-audit",
+   "do": "Rank by multiple over your median. Read retention for the top and bottom three.",
+   "gate": "approve",
+   "produces": "post-mortem"
+  },
+  {
+   "id": "outliers",
+   "title": "Your own outliers",
+   "skill": "sr-outliers",
+   "do": "Which hooks, topics and formats beat your median. What did the misses share.",
+   "gate": "approve",
+   "produces": "patterns"
+  },
+  {
+   "id": "experiments",
+   "title": "Review experiments",
+   "skill": "sr-growth-loop",
+   "do": "Read each result with its sample size. Adopt, extend or drop.",
+   "gate": "approve",
+   "produces": "decisions"
+  },
+  {
+   "id": "facts",
+   "title": "Check what changed on the platforms",
+   "skill": "sr-research",
+   "do": "Run the stale-facts check. Search for new policy or ranking announcements.",
+   "gate": "approve",
+   "produces": "change list"
+  },
+  {
+   "id": "calibrate",
+   "title": "Calibrate the hook score",
+   "skill": "sr-growth-loop",
+   "do": "With 30+ posts, see which of the six checks predict YOUR winners.",
+   "gate": "approve",
+   "produces": "weights"
+  },
+  {
+   "id": "strategy",
+   "title": "Update the strategy",
+   "skill": "sr-strategy",
+   "do": "Keep, change or cut. Hub, spokes, pillars, cadence.",
+   "gate": "approve",
+   "produces": "strategy"
+  },
+  {
+   "id": "calendar",
+   "title": "Next month's calendar",
+   "skill": "sr-calendar",
+   "do": "Rebuild inside your real hours.",
+   "gate": "approve",
+   "produces": "calendar"
+  }
+ ],
+ "id": "monthly-review"
+}

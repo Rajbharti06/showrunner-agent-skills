@@ -1,0 +1,73 @@
+{
+ "title": "Two-week campaign",
+ "duration": "14 days",
+ "when": "You are launching something: a product, a course, a service, a video series, an application round.",
+ "summary": "One offer, one audience, one call to action. Teaser, proof, objections, offer, last call.",
+ "steps": [
+  {
+   "id": "offer",
+   "title": "Define the offer",
+   "skill": "sr-strategy",
+   "do": "What, for whom, the single call to action, the real deadline, and the proof you can show.",
+   "gate": "approve",
+   "produces": "brief"
+  },
+  {
+   "id": "objections",
+   "title": "Map the objections",
+   "skill": "sr-strategy",
+   "do": "List why someone would not act. Each objection becomes a piece of content.",
+   "gate": "approve",
+   "produces": "objection map"
+  },
+  {
+   "id": "plan",
+   "title": "Plan the arc",
+   "skill": "sr-calendar",
+   "do": "Teaser, proof, objection answers, offer, last call. Spread across the platforms you use.",
+   "gate": "approve",
+   "produces": "campaign calendar"
+  },
+  {
+   "id": "make",
+   "title": "Produce the assets",
+   "skill": "sr-hook",
+   "do": "Hooks, scripts, carousels and text posts for each beat of the arc.",
+   "gate": "approve",
+   "produces": "assets"
+  },
+  {
+   "id": "check",
+   "title": "Check claims and disclosure",
+   "skill": "sr-policy-check",
+   "do": "No invented results or testimonials. Disclose any material connection.",
+   "gate": "approve",
+   "produces": "checked assets"
+  },
+  {
+   "id": "launch",
+   "title": "Launch",
+   "skill": "showrunner",
+   "do": "You publish on schedule.",
+   "gate": "human",
+   "produces": "live campaign"
+  },
+  {
+   "id": "follow",
+   "title": "Follow up",
+   "skill": "sr-engage",
+   "do": "Answer every question. DM warm replies with something useful, not a pitch.",
+   "gate": "human",
+   "produces": "conversations"
+  },
+  {
+   "id": "debrief",
+   "title": "Debrief",
+   "skill": "sr-audit",
+   "do": "What moved people to act? Log it for next time.",
+   "gate": "data",
+   "produces": "debrief"
+  }
+ ],
+ "id": "campaign-sprint"
+}

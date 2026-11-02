@@ -1,0 +1,65 @@
+{
+ "title": "One source, many pieces",
+ "duration": "1 to 2 days",
+ "when": "You have a long video, podcast, talk or article and want a week of content from it.",
+ "summary": "Find the best clips, cut, caption, adapt per platform, add text and carousel derivatives, check originality, schedule.",
+ "steps": [
+  {
+   "id": "ingest",
+   "title": "Bring the source",
+   "skill": "sr-repurpose",
+   "do": "Give the transcript (SRT or text) and the video file name.",
+   "gate": "data",
+   "produces": "transcript"
+  },
+  {
+   "id": "clips",
+   "title": "Find the clips",
+   "skill": "sr-repurpose",
+   "do": "Score windows on hook, self-containment, density and payoff. Pick the top five.",
+   "gate": "approve",
+   "produces": "clip list"
+  },
+  {
+   "id": "cut",
+   "title": "Cut list and captions",
+   "skill": "sr-edit-plan",
+   "do": "Tighten dead air, re-chunk captions for vertical, generate the cut commands.",
+   "gate": "human",
+   "produces": "cut clips"
+  },
+  {
+   "id": "copy",
+   "title": "Hook and caption per platform",
+   "skill": "sr-hook",
+   "do": "A different first line for each platform. Do not post identical copy everywhere.",
+   "gate": "approve",
+   "produces": "copy"
+  },
+  {
+   "id": "text",
+   "title": "Text and carousel derivatives",
+   "skill": "sr-text-post",
+   "do": "Turn two or three points into a text post and one carousel.",
+   "gate": "approve",
+   "produces": "derivatives"
+  },
+  {
+   "id": "polish",
+   "title": "Humanize and originality check",
+   "skill": "sr-policy-check",
+   "do": "Make sure each piece adds something of yours. Reposts of others' work are being demoted.",
+   "gate": "approve",
+   "produces": "checked pieces"
+  },
+  {
+   "id": "schedule",
+   "title": "Spread across the week",
+   "skill": "sr-calendar",
+   "do": "Hub first, spokes the next day. Never everything at once.",
+   "gate": "approve",
+   "produces": "calendar"
+  }
+ ],
+ "id": "one-to-many"
+}

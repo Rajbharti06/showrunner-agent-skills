@@ -1,0 +1,153 @@
+{
+ "title": "Zero to your first 1,000",
+ "duration": "30 days",
+ "when": "You are starting a channel or account and want a plan you can actually finish.",
+ "summary": "Intake, positioning, voice, profile, research, first batch of content, a four-week calendar, and a day-30 review. One hub platform first.",
+ "steps": [
+  {
+   "id": "intake",
+   "title": "Run the intake",
+   "skill": "showrunner",
+   "do": "Answer what you are making, who it is for, where, and why. Confirm the hub, the spokes and the weekly load.",
+   "gate": "approve",
+   "produces": "profile.json"
+  },
+  {
+   "id": "positioning",
+   "title": "Write the promise and the pillars",
+   "skill": "sr-strategy",
+   "do": "One sentence on who you help and how. Three content pillars. A list of things about you that are provable.",
+   "gate": "approve",
+   "produces": "positioning + pillars"
+  },
+  {
+   "id": "voice",
+   "title": "Capture your voice",
+   "skill": "sr-voice",
+   "do": "Paste or upload 3 to 5 things you wrote or said. Build voice notes every later draft will use.",
+   "gate": "approve",
+   "produces": "voice notes"
+  },
+  {
+   "id": "profile",
+   "title": "Set up the hub profile",
+   "skill": "sr-profile-audit",
+   "do": "Score the hub profile, then rewrite name, bio, link and pinned content in fix-first order.",
+   "gate": "approve",
+   "produces": "profile rewrite"
+  },
+  {
+   "id": "research",
+   "title": "Study what works in your niche",
+   "skill": "sr-research",
+   "do": "Pick 5 to 10 accounts. List the topics and formats that recur. Note the gaps.",
+   "gate": "approve",
+   "produces": "niche map"
+  },
+  {
+   "id": "outliers",
+   "title": "Rank outliers",
+   "skill": "sr-outliers",
+   "do": "Collect 10 to 20 posts by hand or from exports, then rank them by multiple over each account's median.",
+   "gate": "data",
+   "produces": "swipe file"
+  },
+  {
+   "id": "ideas",
+   "title": "Build the idea bank",
+   "skill": "sr-ideas",
+   "do": "Generate and score 30 ideas across the pillars. Pick the first 6.",
+   "gate": "approve",
+   "produces": "scored ideas"
+  },
+  {
+   "id": "hooks",
+   "title": "Write the hooks",
+   "skill": "sr-hook",
+   "do": "Three hooks per chosen idea, scored. Keep the best, cut anything with a dealbreaker.",
+   "gate": "approve",
+   "produces": "hooks"
+  },
+  {
+   "id": "scripts",
+   "title": "Script the first batch",
+   "skill": "sr-script",
+   "do": "Script and time the first three to six pieces. Fix every beat flag before filming.",
+   "gate": "approve",
+   "produces": "scripts"
+  },
+  {
+   "id": "packaging",
+   "title": "Package it",
+   "skill": "sr-caption",
+   "do": "Captions, titles and thumbnail text. Check the preview window on each platform.",
+   "gate": "approve",
+   "produces": "captions + titles"
+  },
+  {
+   "id": "polish",
+   "title": "Clean and check",
+   "skill": "sr-humanize",
+   "do": "Run the humanizer, then the policy check for originality, disclosure and claims.",
+   "gate": "approve",
+   "produces": "final copy"
+  },
+  {
+   "id": "calendar",
+   "title": "Lay out four weeks",
+   "skill": "sr-calendar",
+   "do": "Build the calendar inside your real hours. Export to your calendar app.",
+   "gate": "approve",
+   "produces": "calendar"
+  },
+  {
+   "id": "publish1",
+   "title": "Publish week one",
+   "skill": "showrunner",
+   "do": "You post. Nothing here posts for you. Note the time you posted each piece.",
+   "gate": "human",
+   "produces": "published posts"
+  },
+  {
+   "id": "engage",
+   "title": "Run the engagement routine",
+   "skill": "sr-engage",
+   "do": "Fifteen minutes a day: comments on ten accounts in your niche, replies on your own posts, one useful DM.",
+   "gate": "human",
+   "produces": "engagement log"
+  },
+  {
+   "id": "review1",
+   "title": "Week-one numbers",
+   "skill": "sr-audit",
+   "do": "Export the numbers for your first posts. Read them against each other, not against anyone else.",
+   "gate": "data",
+   "produces": "first read"
+  },
+  {
+   "id": "experiment",
+   "title": "Choose one thing to test",
+   "skill": "sr-growth-loop",
+   "do": "Pick a single variable for weeks two and three. Write the hypothesis before you post.",
+   "gate": "approve",
+   "produces": "experiment"
+  },
+  {
+   "id": "sprints",
+   "title": "Run two weekly sprints",
+   "skill": "showrunner",
+   "do": "Start the weekly-sprint playbook twice. Same cadence, one variable changed.",
+   "gate": "human",
+   "produces": "six to twelve posts"
+  },
+  {
+   "id": "day30",
+   "title": "Day-30 review",
+   "skill": "sr-growth-loop",
+   "do": "Run the monthly-review playbook. Decide: keep the hub, change the format, add a spoke, or cut one.",
+   "gate": "approve",
+   "produces": "decision"
+  }
+ ],
+ "id": "zero-to-first-1000"
+}

@@ -1,0 +1,105 @@
+{
+ "title": "Weekly content sprint",
+ "duration": "one week",
+ "when": "Every week once the plan is set.",
+ "summary": "Check last week, pick ideas, hooks, scripts, packaging, clean-up, adapt for spokes, schedule, publish, engage, log.",
+ "steps": [
+  {
+   "id": "review",
+   "title": "Read last week",
+   "skill": "sr-audit",
+   "do": "If you have numbers, read the outliers and the cliffs. Name one thing to repeat and one to drop.",
+   "gate": "data",
+   "produces": "last-week read"
+  },
+  {
+   "id": "pick",
+   "title": "Pick this week's ideas",
+   "skill": "sr-ideas",
+   "do": "Choose ideas for each hub slot. Balance the pillars.",
+   "gate": "approve",
+   "produces": "ideas"
+  },
+  {
+   "id": "hooks",
+   "title": "Hooks",
+   "skill": "sr-hook",
+   "do": "Three scored hooks each. Keep the best.",
+   "gate": "approve",
+   "produces": "hooks"
+  },
+  {
+   "id": "script",
+   "title": "Scripts or copy",
+   "skill": "sr-script",
+   "do": "Video: script and time it. Carousel: sr-carousel. Text: sr-text-post.",
+   "gate": "approve",
+   "produces": "drafts"
+  },
+  {
+   "id": "package",
+   "title": "Titles, captions, keywords",
+   "skill": "sr-title-thumbnail",
+   "do": "YouTube: title and thumbnail as a pair. Everywhere else: caption with the preview window checked.",
+   "gate": "approve",
+   "produces": "packaging"
+  },
+  {
+   "id": "polish",
+   "title": "Humanize and policy check",
+   "skill": "sr-humanize",
+   "do": "Clean the copy. Check originality, disclosure and claims.",
+   "gate": "approve",
+   "produces": "final copy"
+  },
+  {
+   "id": "edit",
+   "title": "Edit plan",
+   "skill": "sr-edit-plan",
+   "do": "Cut list, caption file, b-roll notes. Apply it in your editor.",
+   "gate": "human",
+   "produces": "edited video"
+  },
+  {
+   "id": "adapt",
+   "title": "Adapt for spokes",
+   "skill": "sr-repurpose",
+   "do": "Native version for each spoke: new first frame, platform captions, no foreign watermarks.",
+   "gate": "approve",
+   "produces": "spoke versions"
+  },
+  {
+   "id": "schedule",
+   "title": "Update the calendar",
+   "skill": "sr-calendar",
+   "do": "Move anything that slipped. Keep the plan inside your hours.",
+   "gate": "approve",
+   "produces": "calendar"
+  },
+  {
+   "id": "publish",
+   "title": "Publish",
+   "skill": "showrunner",
+   "do": "You post. Note exact times.",
+   "gate": "human",
+   "produces": "published posts"
+  },
+  {
+   "id": "engage",
+   "title": "Engage for 48 hours",
+   "skill": "sr-engage",
+   "do": "Reply to every comment worth answering. Comment on ten accounts in your niche.",
+   "gate": "human",
+   "produces": "engagement"
+  },
+  {
+   "id": "log",
+   "title": "Log it",
+   "skill": "sr-growth-loop",
+   "do": "Record the numbers and the variable you changed.",
+   "gate": "data",
+   "produces": "log"
+  }
+ ],
+ "id": "weekly-sprint"
+}

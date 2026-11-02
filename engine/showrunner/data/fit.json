@@ -1,0 +1,346 @@
+{
+ "version": 1,
+ "note": "Priors from the maintainer, scored 1 to 5. They are opinions. Edit them.",
+ "platforms": {
+  "youtube": {
+   "label": "YouTube",
+   "effort": 4,
+   "discovery": "search and recommendation; videos keep earning for years",
+   "content": {
+    "short_video": 4,
+    "long_video": 5,
+    "carousel": 1,
+    "text": 1,
+    "live": 3
+   },
+   "goal": {
+    "audience": 4,
+    "leads": 4,
+    "authority": 5,
+    "income": 5,
+    "community": 3
+   },
+   "audience": {
+    "students": 5,
+    "professionals": 4,
+    "developers": 5,
+    "smallbiz": 4,
+    "genz": 4,
+    "parents": 4,
+    "hobbyists": 5,
+    "general": 4
+   },
+   "note": "Best for depth and for content that keeps earning. Shorts are a fast on-ramp; long-form is where trust builds."
+  },
+  "instagram": {
+   "label": "Instagram",
+   "effort": 3,
+   "discovery": "recommendation plus your followers; strong for visual and carousel",
+   "content": {
+    "short_video": 4,
+    "long_video": 1,
+    "carousel": 5,
+    "text": 2,
+    "live": 3
+   },
+   "goal": {
+    "audience": 4,
+    "leads": 3,
+    "authority": 3,
+    "income": 3,
+    "community": 4
+   },
+   "audience": {
+    "students": 4,
+    "professionals": 3,
+    "developers": 2,
+    "smallbiz": 4,
+    "genz": 5,
+    "parents": 4,
+    "hobbyists": 4,
+    "general": 4
+   },
+   "note": "Reels for reach, carousels for saves and sends, Stories and DMs for relationship."
+  },
+  "tiktok": {
+   "label": "TikTok",
+   "effort": 3,
+   "discovery": "recommendation first, search growing; follower count matters less",
+   "content": {
+    "short_video": 5,
+    "long_video": 2,
+    "carousel": 3,
+    "text": 1,
+    "live": 3
+   },
+   "goal": {
+    "audience": 5,
+    "leads": 2,
+    "authority": 2,
+    "income": 3,
+    "community": 3
+   },
+   "audience": {
+    "students": 4,
+    "professionals": 2,
+    "developers": 2,
+    "smallbiz": 3,
+    "genz": 5,
+    "parents": 3,
+    "hobbyists": 4,
+    "general": 4
+   },
+   "note": "Fastest path to a first big view count. Check it is available and allowed in your country before you commit."
+  },
+  "facebook": {
+   "label": "Facebook",
+   "effort": 2,
+   "discovery": "groups, pages and Reels; older and local audiences",
+   "content": {
+    "short_video": 3,
+    "long_video": 3,
+    "carousel": 2,
+    "text": 3,
+    "live": 3
+   },
+   "goal": {
+    "audience": 3,
+    "leads": 3,
+    "authority": 2,
+    "income": 3,
+    "community": 5
+   },
+   "audience": {
+    "students": 2,
+    "professionals": 2,
+    "developers": 1,
+    "smallbiz": 4,
+    "genz": 2,
+    "parents": 5,
+    "hobbyists": 4,
+    "general": 4
+   },
+   "note": "Strongest for community, local business and parents. Reels reach is real; groups carry the relationship."
+  },
+  "linkedin": {
+   "label": "LinkedIn",
+   "effort": 2,
+   "discovery": "your network widening by engagement; professional intent",
+   "content": {
+    "short_video": 3,
+    "long_video": 2,
+    "carousel": 5,
+    "text": 5,
+    "live": 2
+   },
+   "goal": {
+    "audience": 3,
+    "leads": 5,
+    "authority": 5,
+    "income": 2,
+    "community": 3
+   },
+   "audience": {
+    "students": 3,
+    "professionals": 5,
+    "developers": 4,
+    "smallbiz": 4,
+    "genz": 1,
+    "parents": 1,
+    "hobbyists": 1,
+    "general": 2
+   },
+   "note": "Best for B2B leads, hiring and credibility. Text and document carousels do the work."
+  },
+  "x": {
+   "label": "X",
+   "effort": 2,
+   "discovery": "replies and the For You feed; fast, public, conversational",
+   "content": {
+    "short_video": 2,
+    "long_video": 1,
+    "carousel": 1,
+    "text": 5,
+    "live": 2
+   },
+   "goal": {
+    "audience": 3,
+    "leads": 3,
+    "authority": 4,
+    "income": 2,
+    "community": 4
+   },
+   "audience": {
+    "students": 2,
+    "professionals": 3,
+    "developers": 5,
+    "smallbiz": 3,
+    "genz": 2,
+    "parents": 1,
+    "hobbyists": 3,
+    "general": 3
+   },
+   "note": "Best for ideas, developer and founder circles, and building in public."
+  },
+  "threads": {
+   "label": "Threads",
+   "effort": 2,
+   "discovery": "recommendation of short text; overlaps with Instagram audiences",
+   "content": {
+    "short_video": 2,
+    "long_video": 1,
+    "carousel": 2,
+    "text": 4,
+    "live": 1
+   },
+   "goal": {
+    "audience": 3,
+    "leads": 2,
+    "authority": 2,
+    "income": 1,
+    "community": 3
+   },
+   "audience": {
+    "students": 3,
+    "professionals": 2,
+    "developers": 3,
+    "smallbiz": 2,
+    "genz": 3,
+    "parents": 3,
+    "hobbyists": 3,
+    "general": 3
+   },
+   "note": "Low effort if you already post on Instagram. Treat it as a spoke."
+  }
+ },
+ "short_video_family": [
+  "youtube",
+  "instagram",
+  "tiktok",
+  "facebook"
+ ],
+ "measure": {
+  "youtube": [
+   "Short: 'How many chose to view' (share who watched rather than swiped away)",
+   "Long: click-through rate and average percentage viewed, per video",
+   "Subscribers gained per 1,000 views"
+  ],
+  "instagram": [
+   "Sends per reach (one of the three video signals Mosseri named: watch time, likes per reach, sends per reach)",
+   "Watch time and average watch time on Reels",
+   "Saves per reach on carousels"
+  ],
+  "tiktok": [
+   "Completion rate and average watch time",
+   "Shares per view",
+   "Profile visits per 1,000 views"
+  ],
+  "facebook": [
+   "3-second and 1-minute views on Reels",
+   "Shares and saves",
+   "Group or page follows gained per post"
+  ],
+  "linkedin": [
+   "Comments (depth, not count), and how early they arrive",
+   "Impressions per post against your own median",
+   "Profile views and inbound messages"
+  ],
+  "x": [
+   "Replies and quotes per post",
+   "Profile visits per post",
+   "Follows per 100 posts"
+  ],
+  "threads": [
+   "Replies per post",
+   "Reposts per post",
+   "Follows per 100 posts"
+  ]
+ },
+ "audience_tags": {
+  "students": [
+   "student",
+   "students",
+   "school",
+   "college",
+   "university",
+   "exam",
+   "admission",
+   "scholarship",
+   "applicant",
+   "applicants",
+   "gen z"
+  ],
+  "professionals": [
+   "professional",
+   "professionals",
+   "career",
+   "job",
+   "hiring",
+   "recruiter",
+   "manager",
+   "b2b",
+   "corporate",
+   "working"
+  ],
+  "developers": [
+   "developer",
+   "developers",
+   "programmer",
+   "engineer",
+   "engineers",
+   "coder",
+   "coders",
+   "devs",
+   "cybersecurity",
+   "security",
+   "hacker",
+   "hackers"
+  ],
+  "smallbiz": [
+   "small business",
+   "owner",
+   "owners",
+   "founder",
+   "founders",
+   "startup",
+   "freelancer",
+   "freelancers",
+   "agency",
+   "seller",
+   "entrepreneur"
+  ],
+  "genz": [
+   "teen",
+   "teens",
+   "gen z",
+   "genz",
+   "youth",
+   "young"
+  ],
+  "parents": [
+   "parent",
+   "parents",
+   "mom",
+   "moms",
+   "dad",
+   "dads",
+   "family",
+   "families"
+  ],
+  "hobbyists": [
+   "hobby",
+   "hobbyist",
+   "fitness",
+   "cooking",
+   "gaming",
+   "gamer",
+   "gamers",
+   "art",
+   "music",
+   "travel",
+   "diy",
+   "fan",
+   "fans"
+  ]
+ }
+}
