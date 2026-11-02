@@ -6,7 +6,7 @@ There are three ways, from easiest to most hands-on. None of them has been teste
 
 ChatGPT loads Agent Skills (`SKILL.md`). As documented in November 2026: upload a ZIP through Plugins, then Skills, then Create, then Upload, on paid plans except Free and Go. On Enterprise and Edu, an admin has to turn Skills on first. See `showrunner facts --id tooling.chatgpt.skills` for the source and date.
 
-1. Get the zips: run `python scripts/build_dist.py` in a checkout, or download them from the release page. You get one zip per skill in `dist/skills/` and one for everything.
+1. Get the zips: run `python scripts/build_dist.py` in a checkout, or download them from the [latest release](https://github.com/Rajbharti06/showrunner-agent-skills/releases/latest). You get one zip per skill in `dist/skills/` and one for everything.
 2. Upload `showrunner.zip` first. It is the conductor, and it asks the first questions.
 3. Upload the skills you want to use alongside it. Start with `sr-intake`, `sr-hook`, `sr-script` and `sr-caption`, then add more.
 4. Start a chat and say: *I want to grow my channel.*

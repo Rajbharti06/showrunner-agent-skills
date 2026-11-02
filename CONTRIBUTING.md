@@ -63,6 +63,10 @@ The writing in this repo follows the same rules the humanizer enforces. No em da
 
 Python 3.9 compatible, standard library only. No network calls in the engine. Tools return `{"ok", "text", "data"}`. Anything that writes to disk is marked `stateful` so the HTTP server hides it by default. Tests for every bug fixed.
 
+## License of contributions
+
+The project is MIT licensed. By opening a pull request you agree that your contribution is released under the same MIT license, including for commercial use by anyone, the maintainer included.
+
 ## Be kind
 
 Assume good faith. Disagree about the work, not the person.

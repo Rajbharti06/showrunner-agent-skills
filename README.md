@@ -8,6 +8,17 @@
 
 It writes and plans. **It never posts.** Nothing goes out until you say yes and press the button yourself.
 
+## Try it in one minute
+
+In Claude Code, run these two commands, then start a new session and say **I want to grow my channel.**
+
+```
+/plugin marketplace add Rajbharti06/showrunner-agent-skills
+/plugin install showrunner@showrunner
+```
+
+On ChatGPT, Codex, Cursor, Gemini CLI, the Claude app or an MCP client? See [Start in five minutes](#start-in-five-minutes).
+
 ---
 
 ## What happens when you start
@@ -94,7 +105,7 @@ Pick your tool. You need Python 3.9 or newer only if you want the scoring tools.
 | You use | Do this |
 |---|---|
 | **Claude Code** | `/plugin marketplace add Rajbharti06/showrunner-agent-skills` then `/plugin install showrunner@showrunner`. Or `git clone` this repo and run `python install.py --target claude` |
-| **Claude (app or web)** | Upload the zips from [`dist/skills/`](dist) (run `python scripts/build_dist.py`, or take them from a release) in Claude's skills settings. Start with `showrunner.zip` |
+| **Claude (app or web)** | Upload the zips from the [latest release](https://github.com/Rajbharti06/showrunner-agent-skills/releases/latest) (or build them with `python scripts/build_dist.py`) in Claude's skills settings. Start with `showrunner.zip` |
 | **ChatGPT** | Upload the zips as skills on a paid plan, or build a Custom GPT. Steps in [docs/chatgpt.md](docs/chatgpt.md) |
 | **Codex, Cursor, Gemini CLI** | `python install.py --target agents` (the shared `~/.agents/skills` folder). Or `--target cursor` or `--target gemini`. Details below |
 | **Anything that speaks MCP** | `pip install .` then `showrunner-mcp`. Config for each client in [mcp/README.md](mcp/README.md) |
@@ -144,9 +155,9 @@ vidIQ offers an MCP connector with keyword and competitor data, which Showrunner
 
 ## What is tested, and what is not
 
-Tested: the engine and tools on Python 3.9, 3.11, 3.12 and 3.13 on Linux, with 76 tests. The MCP server over stdio and HTTP with a protocol test suite. The ffmpeg commands against a real generated video. The calendar's `.ics` output against a calendar parser. Installing with `pip` and with `install.py`, and running a single unzipped skill with nothing else installed.
+Tested: the engine and tools on Python 3.9, 3.11, 3.12 and 3.13 on Linux, with 76 tests, and the same 76 tests plus the four repo checks on Python 3.12 on Windows 11. The MCP server over stdio and HTTP with a protocol test suite. The ffmpeg commands against a real generated video. The calendar's `.ics` output against a calendar parser. Installing with `pip` and with `install.py` on Linux, and running a single unzipped skill with nothing else installed. Installing the Claude Code plugin from this repo on Windows 11 with Claude Code 2.1.219: the marketplace adds, all 24 skills install and the bundled engine starts.
 
-**Not tested by the maintainers:** Windows and macOS (CI runs them best effort), and loading the skills inside ChatGPT, Codex, Cursor, Gemini CLI, the Claude app upload screen or the Claude Code plugin marketplace. They were written to each tool's published format. If one does not load, open an issue with what you saw.
+**Not tested by the maintainers:** macOS (CI runs it best effort), `install.py` on Windows, a full Claude Code session using the installed plugin, and loading the skills inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app upload screen. They were written to each tool's published format. If one does not load, open an issue with what you saw.
 
 ## Contributing
 
@@ -164,7 +175,7 @@ gpt/           Custom GPT instructions and knowledge file list
 scripts/       validators, generators and the zip builder
 tests/         76 tests
 .github/       CI, issue and pull request templates
-.claude-plugin/  Claude Code plugin and marketplace manifests (not tested)
+.claude-plugin/  Claude Code plugin and marketplace manifests
 ```
 
 How the pieces fit together is in [docs/architecture.md](docs/architecture.md). If you are the one publishing this repo, read [docs/launch-playbook.md](docs/launch-playbook.md) first.

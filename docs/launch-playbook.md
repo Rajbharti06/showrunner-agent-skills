@@ -17,7 +17,7 @@ Description (about 120 characters is plenty): *24 Agent Skills that ask what you
 
 Topics to add: `agent-skills`, `claude-code`, `claude-skills`, `chatgpt`, `codex`, `cursor`, `gemini-cli`, `mcp`, `content-creation`, `youtube`, `instagram`, `tiktok`, `social-media`, `creator-tools`.
 
-Social preview: a 1280 by 640 image in Settings. Plain text on a plain background beats a busy graphic. Put the one-line pitch on it.
+Social preview: a 1280 by 640 image in Settings. Plain text on a plain background beats a busy graphic. Put the one-line pitch on it. There is one ready at [`docs/social-preview.png`](social-preview.png). GitHub has no API for this, so upload it by hand under Settings, General, Social preview.
 
 Turn on Discussions so questions have somewhere to go that is not Issues. Pin one issue called "Good first fact checks" that lists the 15 facts without a verified link (`showrunner doctor` prints the count). It gives newcomers an easy first pull request, and that is how a small repo gets its first contributors.
 

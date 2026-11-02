@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (unreleased)
+## 0.1.0 (2026-11-02)
 
 First public version.
 
@@ -12,6 +12,6 @@ First public version.
 - `install.py` for Claude, Cursor, Gemini CLI and the shared `.agents/skills` folder. `build_dist.py` for upload-ready zips with fixed timestamps, so the same inputs give the same zips on the same Python.
 - Claude Code plugin manifest and marketplace file.
 - Custom GPT instructions and knowledge list.
-- 74 tests, a skill validator that checks every tool, flag and fact id the skills mention, and a prose linter.
+- 76 tests, a skill validator that checks every tool, flag and fact id the skills mention, and a prose linter.
 
-Known limits: not tested on Windows or macOS, and not tested inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app's upload screen. HTTP MCP supports a bearer token, not OAuth.
+Known limits: not tested on macOS. On Windows, the tests and the Claude Code plugin install were checked, `install.py` was not. Not tested inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app's upload screen, or in a full Claude Code session. HTTP MCP supports a bearer token, not OAuth.
