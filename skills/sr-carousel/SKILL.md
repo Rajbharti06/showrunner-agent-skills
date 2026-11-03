@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. Design tools such as Canva or Figma help if connected; otherwise the output is a slide table to paste into any editor.
 metadata:
   author: Raj Bharti
-  version: "0.1.0"
+  version: "0.1.1"
   family: showrunner
 ---
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 (2026-11-03)
 
 Found by running the plugin in a live Claude Code session on Windows. Each fix has a test.
 

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. Python 3.9+ for the ranking tool; the by-hand method below needs only a spreadsheet.
 metadata:
   author: Raj Bharti
-  version: "0.1.0"
+  version: "0.1.1"
   family: showrunner
 ---
 

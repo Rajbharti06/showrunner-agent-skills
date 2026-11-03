@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. The facts lookup needs Python 3.9+; the reference files can be read without it.
 metadata:
   author: Raj Bharti
-  version: "0.1.0"
+  version: "0.1.1"
   family: showrunner
 ---
 

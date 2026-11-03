@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. No scripts needed.
 metadata:
   author: Raj Bharti
-  version: "0.1.0"
+  version: "0.1.1"
   family: showrunner
 ---
 

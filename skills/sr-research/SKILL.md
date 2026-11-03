@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. Web search or a connected analytics tool helps but is not required; the person can paste what they see.
 metadata:
   author: Raj Bharti
-  version: "0.1.0"
+  version: "0.1.1"
   family: showrunner
 ---
 
