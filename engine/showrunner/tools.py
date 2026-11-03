@@ -464,7 +464,19 @@ def h_profile_get(p):
 
 def h_profile_save(p):
     _need_state(p)
-    prof = store.save_profile(p["profile"], merge=not p.get("replace", False))
+    data = dict(p.get("profile") or {})
+    data.update({k: p[k] for k in ("niche", "goal", "stage", "hours_per_week", "platforms", "hub", "on_camera") if p.get(k) is not None})
+    if p.get("content_types"):
+        data["content_type"] = p["content_types"]
+    if p.get("audience"):
+        aud = data.get("audience")
+        if not isinstance(aud, dict):
+            aud = {} if p.get("replace") else dict((store.load_profile() or {}).get("audience") or {})
+        aud["who"] = p["audience"]
+        data["audience"] = aud
+    if not data:
+        raise ToolError("Nothing to save. Pass the answers with the flags intake takes, or a JSON object of fields.")
+    prof = store.save_profile(data, merge=not p.get("replace", False))
     return "Saved to %s\n\n%s" % (store.profile_path(), render.profile(prof)), {"profile": prof}
 
 
@@ -718,8 +730,18 @@ TOOLS: List[Tool] = [
     Tool("profile_get", "profile get", "Show the saved creator profile.",
          "Returns the saved profile (niche, audience, goal, stage, platforms, hours, pillars, proof, voice).", [], h_profile_get, stateful=True),
     Tool("profile_save", "profile save", "Save or update the creator profile.",
-         "Saves the profile so later tools can use it as defaults. Fields: name, niche, audience {who, region, languages, level}, goal, stage, platforms, hub, hours_per_week, on_camera, tools, pillars, proof, voice {banned_phrases, banned_chars, notes}, content_type, best_times, lessons (list of one-line findings). Only save what the person told you.",
-         [P("profile", "object", "The fields to save, as a JSON object.", required=True), P("replace", "boolean", "Replace the whole profile instead of merging.")],
+         "Saves the profile so later tools can use it as defaults. Pass the intake answers with the same flags intake takes, a JSON object of fields, or both. Fields: name, niche, audience {who, region, languages, level}, goal, stage, platforms, hub, hours_per_week, on_camera, tools, pillars, proof, voice {banned_phrases, banned_chars, notes}, content_type, best_times, lessons (list of one-line findings). Only save what the person told you.",
+         [P("profile", "object", "Fields to save, as a JSON object."),
+          P("content_types", "string_list", "What they make. Several are saved as mix.", enum=CONTENT_TYPES),
+          P("audience", "string", "Who it is for, in a sentence."),
+          P("niche", "string", "The topic, in a few words."),
+          P("goal", "string", "audience, leads, authority, income or community (or plain words)."),
+          P("stage", "string", "Where they are now.", enum=STAGES),
+          P("hours_per_week", "number", "Honest hours per week, filming and editing included."),
+          P("platforms", "string_list", "Platforms they post on or want to.", enum=PLATFORMS),
+          P("hub", "string", "The hub platform the intake picked.", enum=PLATFORMS),
+          P("on_camera", "boolean", "Willing to be on camera?"),
+          P("replace", "boolean", "Replace the whole profile instead of merging.")],
          h_profile_save, stateful=True),
     Tool("skill_list", "skills", "List the skills in this repo.", "Lists every skill with its description. For hosts that connect to Showrunner as a tool server and have no native skill loader.",
          [], h_skill_list),

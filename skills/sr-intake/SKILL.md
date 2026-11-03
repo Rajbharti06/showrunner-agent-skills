@@ -15,7 +15,7 @@ People who start with "which platform should I use?" usually have not decided wh
 
 ## The questions
 
-Ask one or two at a time, in the person's own words. Do not send a form. Accept "not sure" and help them decide.
+Ask at most two in a message, in the person's own words, then wait for the answer. Do not send a numbered list of all seven: that is a form. If they answer several at once, skip what they already told you. Accept "not sure" and help them decide.
 
 1. **What do you want to make?** Short vertical video, long video, carousels or slides, written posts, or a mix. If they say "everything", ask which one they would still enjoy in six months.
 2. **Who is it for?** One sentence about a real person: their situation, region, what they are trying to do. "Everyone" is not an answer. Push gently for a specific person.
@@ -37,7 +37,7 @@ If you are connected to the tools, `intake_questions` returns this list in a str
 
 ## Recommend
 
-Call `intake_recommend` with the answers (CLI: `python scripts/sr.py intake --content-types short_video --audience "..." --goal leads --stage zero --hours-per-week 5 --platforms instagram,youtube`). It returns:
+Call `intake_recommend` with the answers (CLI: `python scripts/sr.py intake --content-types short_video --audience "..." --goal leads --stage zero --hours-per-week 5 --platforms instagram,youtube --no-on-camera`). Always pass the camera answer: `--on-camera` or `--no-on-camera`. Left out, it counts as unknown and the faceless advice is skipped. Run `scripts/sr.py` by its full path inside this skill's folder, without changing directory. It returns:
 
 - a fit ranking of seven platforms with the reasons
 - one **hub** (where you make things first), up to two **spokes** (where you adapt them), and **skip for now**
@@ -54,7 +54,7 @@ Pick the hub where three things overlap: where their audience already spends tim
 
 ## Gate
 
-`approve`. Show the recommendation and ask: "Does this match how you see it? What would you change?" Then offer to save the profile (`profile_save`) and to start the `zero-to-first-1000` playbook.
+`approve`. Show the recommendation and ask: "Does this match how you see it? What would you change?" Then offer to save the profile and to start the `zero-to-first-1000` playbook. `profile_save` takes the same flags as `intake` (CLI: `python scripts/sr.py profile save --content-types short_video --goal leads --stage zero --hours-per-week 5 --hub instagram --no-on-camera`).
 
 ## Do not
 

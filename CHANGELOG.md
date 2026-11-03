@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+Found by running the plugin in a live Claude Code session on Windows. Each fix has a test.
+
+- Boolean flags take a word too: `--on-camera no`, `--on-camera=yes`, and `--no-on-camera`. Before, `--on-camera no` was an error, and leaving the flag out lost the faceless advice.
+- `profile save` takes the same flags as `intake`, and a one-item list for `content_type`.
+- `playbook show` lists step ids, and each step says how to skip it.
+- The conductor and intake skills: at most two questions per message, run `scripts/sr.py` by its full path instead of changing into the skill folder, how to skip a step and what it costs, and ask which language the content is in before drafting.
+- `install.py` quotes the path in its closing hint (user folders often have spaces) and names a skill that was installed.
+- docs/honesty.md: the hook scorer's dealbreaker patterns are English only.
+
 ## 0.1.0 (2026-11-02)
 
 First public version.

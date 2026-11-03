@@ -322,6 +322,59 @@ class TestPlaybooksAndTools(unittest.TestCase):
         self.assertFalse(r["ok"])
 
 
+class TestFoundInALiveSession(unittest.TestCase):
+    """Bugs found by running the plugin in a real Claude Code session (Windows, November 2026)."""
+
+    def test_boolean_flags_take_yes_and_no(self):
+        from showrunner import cli
+        ap = cli._build_parser()
+        self.assertIs(ap.parse_args(["intake", "--on-camera", "no"]).on_camera, False)
+        self.assertIs(ap.parse_args(["intake", "--on-camera=yes"]).on_camera, True)
+        self.assertIs(ap.parse_args(["intake", "--no-on-camera"]).on_camera, False)
+        self.assertIs(ap.parse_args(["intake", "--on-camera"]).on_camera, True)
+        self.assertIsNone(ap.parse_args(["intake"]).on_camera)
+        a = ap.parse_args(["playbook", "done", "--skip", "voice"])
+        self.assertEqual((a.step, a.skip), ("voice", True))
+
+    def test_not_on_camera_reaches_the_plan(self):
+        r = tools.run("intake_recommend", {"content_types": ["short_video"], "goal": "income", "stage": "zero",
+                                           "hours_per_week": 5, "on_camera": False})
+        self.assertTrue(r["ok"], r)
+        self.assertIs(r["data"]["inputs"]["on_camera"], False)
+        self.assertIn("faceless", " ".join(r["data"]["notes"]))
+
+    def test_profile_save_takes_the_intake_flags(self):
+        r = tools.run("profile_save", {"content_types": ["short_video"], "audience": "hostel students", "goal": "income",
+                                       "stage": "zero", "hours_per_week": 5, "hub": "youtube", "on_camera": False})
+        self.assertTrue(r["ok"], r)
+        prof = store.load_profile()
+        self.assertEqual(prof["content_type"], "short_video")
+        self.assertEqual(prof["audience"]["who"], "hostel students")
+        self.assertIs(prof["on_camera"], False)
+        self.assertFalse(tools.run("profile_save", {})["ok"])
+
+    def test_profile_accepts_content_type_as_a_list(self):
+        self.assertEqual(store.save_profile({"content_type": ["carousel"]})["content_type"], "carousel")
+        self.assertEqual(store.save_profile({"content_type": ["short_video", "carousel"]})["content_type"], "mix")
+
+    def test_playbook_show_names_step_ids_and_next_says_how_to_skip(self):
+        shown = playbooks.render_show(playbooks.get("zero-to-first-1000"))
+        for sid in ("intake", "positioning", "voice", "research"):
+            self.assertRegex(shown, r"\d\. %s\s" % sid)
+        run = playbooks.start("profile-makeover", "skip-hint")
+        self.assertIn("playbook done audit --skip", playbooks.render_next(playbooks.next_step(run["id"])))
+
+    def test_install_hint_is_quoted_and_names_an_installed_skill(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("install", os.path.join(os.path.dirname(EXAMPLES), "install.py"))
+        install = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(install)
+        cmd = install.check_command(os.path.join("C:", "Users", "Jane Doe", ".claude", "skills"), ["sr-hook", "sr-script"])
+        self.assertTrue(cmd.startswith('python "') and cmd.endswith('" doctor'), cmd)
+        self.assertIn("sr-hook", cmd)
+        self.assertIn("showrunner", install.check_command("x", ["sr-hook", "showrunner"]))
+
+
 class TestRepoHealth(unittest.TestCase):
     """Things that kept going wrong while the repo was written: lookups, wording, and drift."""
 

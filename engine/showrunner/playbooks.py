@@ -128,7 +128,7 @@ def render_list(rows: List[Dict[str, Any]]) -> str:
 def render_show(pb: Dict[str, Any]) -> str:
     out = ["%s  (%s)" % (pb["title"], pb["duration"]), pb["summary"], "=" * 74]
     for i, s in enumerate(pb["steps"], 1):
-        out.append("%2d. [%-7s] %-16s %s" % (i, s["gate"], s["skill"], s["title"]))
+        out.append("%2d. %-12s [%-7s] %-16s %s" % (i, s["id"], s["gate"], s["skill"], s["title"]))
         out.append("      " + s["do"])
     return "\n".join(out)
 
@@ -147,6 +147,7 @@ def render_next(n: Dict[str, Any]) -> str:
             out.append("  %s: %s" % (k, v))
     out.append("")
     out.append("When finished: playbook done %s --note \"what was decided\"" % s["id"])
+    out.append("To skip it:    playbook done %s --skip --note \"why, and what later steps lose\"" % s["id"])
     return "\n".join(out)
 
 

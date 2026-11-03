@@ -32,6 +32,39 @@ def _flag(name: str) -> str:
     return "--" + name.replace("_", "-")
 
 
+_YES = {"yes", "y", "true", "1", "on"}
+_NO = {"no", "n", "false", "0", "off"}
+
+
+def _normalise_bools(argv: List[str]) -> List[str]:
+    """Let boolean flags take a word as well: --on-camera no, --on-camera=yes. Agents write these often.
+
+    A following word is only taken as the value when it is a yes or no word, so `--skip voice` still works."""
+    flags = {_flag(p["name"]) for t in tools.TOOLS for p in t.params if p["type"] == "boolean" and not p["positional"]}
+    out: List[str] = []
+    i = 0
+    while i < len(argv):
+        tok = argv[i]
+        name, eq, val = tok.partition("=")
+        if name in flags:
+            if not eq and i + 1 < len(argv) and argv[i + 1].lower() in _YES | _NO:
+                val = argv[i + 1]
+                i += 1
+            if val.lower() in _NO:
+                tok = "--no-" + name[2:]
+            elif val.lower() in _YES or not eq:
+                tok = name
+        out.append(tok)
+        i += 1
+    return out
+
+
+class _Parser(argparse.ArgumentParser):
+    def parse_known_args(self, args=None, namespace=None):  # type: ignore[override]
+        args = sys.argv[1:] if args is None else list(args)
+        return super().parse_known_args(_normalise_bools(args), namespace)
+
+
 def _read_stdin(timeout: float = 10.0) -> str:
     """Read piped input, but never hang a harness whose stdin is open and silent."""
     box: List[str] = []
@@ -49,7 +82,7 @@ def _read_stdin(timeout: float = 10.0) -> str:
 
 
 def _build_parser() -> argparse.ArgumentParser:
-    ap = argparse.ArgumentParser(prog="showrunner", add_help=True, description="Showrunner: orchestrate content that grows channels. Nothing here posts for you.")
+    ap = _Parser(prog="showrunner", add_help=True, description="Showrunner: orchestrate content that grows channels. Nothing here posts for you.")
     ap.add_argument("--version", action="version", version="showrunner " + tools.VERSION)
     sub = ap.add_subparsers(dest="cmd", metavar="<command>")
     groups: Dict[str, Any] = {}
@@ -68,7 +101,7 @@ def _build_parser() -> argparse.ArgumentParser:
             if p["positional"]:
                 sp.add_argument(p["name"], nargs="?", default=None, help=p["help"] + (" Use - to read stdin." if p.get("bulk") else ""))
             elif p["type"] == "boolean":
-                sp.add_argument(_flag(p["name"]), dest=p["name"], action="store_true", default=None, help=p["help"])
+                sp.add_argument(_flag(p["name"]), dest=p["name"], action=argparse.BooleanOptionalAction, default=None, help=p["help"])
             else:
                 kw: Dict[str, Any] = {"dest": p["name"], "default": None, "metavar": p["name"].upper()[:14]}
                 if p["enum"] and p["type"] == "string":

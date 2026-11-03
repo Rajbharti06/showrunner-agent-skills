@@ -127,6 +127,11 @@ def validate_profile(data: Dict[str, Any]) -> List[str]:
 
 
 def save_profile(data: Dict[str, Any], merge: bool = True) -> Dict[str, Any]:
+    data = dict(data)
+    ct = data.get("content_type")
+    if isinstance(ct, list) and ct and all(isinstance(x, str) for x in ct):
+        # intake takes several formats, the profile keeps one; several means a mix
+        data["content_type"] = ct[0] if len(ct) == 1 else "mix"
     problems = validate_profile(data)
     if problems:
         raise ToolError("Profile problems: " + "; ".join(problems))

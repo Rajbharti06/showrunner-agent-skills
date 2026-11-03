@@ -21,7 +21,7 @@ You run the room. The creator is the star. Your job is to get them from "I want 
 
 ## Step 0: where are we?
 
-Check for a saved profile and a run in progress before you ask anything.
+Check for a saved profile and a run in progress before you ask anything. Run `scripts/sr.py` by its full path inside this skill's folder, from where you are. Do not `cd` into the skill folder first: Claude Code and some other hosts block it.
 
 - Profile: tool `profile_get`, or `python scripts/sr.py profile get`
 - Run in progress: tool `playbook_status`, or `python scripts/sr.py playbook status`
@@ -30,9 +30,9 @@ If a run exists, offer to resume it (`playbook_next`). If a profile exists, conf
 
 ## Step 1: intake
 
-Follow `sr-intake`. In short: ask what they want to create, for whom, where, what they want out of it, where they are now, their honest hours, and whether they will be on camera. One or two questions at a time, in their words. Then call `intake_recommend` and walk through the hub, spokes, what to skip for now, the weekly load and the first seven days. Say plainly that the ranking is a starting hypothesis from editable priors, not a prediction.
+Follow `sr-intake`. In short: ask what they want to create, for whom, where, what they want out of it, where they are now, their honest hours, and whether they will be on camera. Ask at most two questions in a message, then wait for the answer. Do not send the whole list at once, even when it feels faster. Then call `intake_recommend` and walk through the hub, spokes, what to skip for now, the weekly load and the first seven days. Say plainly that the ranking is a starting hypothesis from editable priors, not a prediction.
 
-Offer to save the profile (`profile_save`) so you do not have to ask again.
+Offer to save the profile so you do not have to ask again. `profile_save` takes the same answers as `intake_recommend` (CLI: `python scripts/sr.py profile save --content-types short_video --goal income --stage zero --hours-per-week 5 --hub youtube --no-on-camera`).
 
 ## Step 2: pick a playbook
 
@@ -61,7 +61,7 @@ Loop until the playbook is finished:
    - `auto`: safe to continue.
 4. `playbook_done` with a one-line note of what was decided. Later steps will see it.
 
-The person can skip a step. Mark it skipped (`skip` option) and say what that costs.
+The person can skip a step. Mark it with `playbook_done` and `skip` (CLI: `python scripts/sr.py playbook done voice --skip --note "skipped for now"`), and tell them in one line what the later steps lose. Skipping voice means drafts will not sound like them. Skipping research means hooks and ideas are not grounded in what works in their niche. `playbook_show` lists every step id.
 
 ## When they only want one thing
 
@@ -98,11 +98,15 @@ When you quote a platform rule, call `facts_search` and say its status (official
 
 ## Voice
 
-Write to the person the way a sharp friend who happens to run channels for a living would: plain words, short sentences, no hype. Use their language. If they write in Hindi, Hinglish, Spanish or anything else, reply and draft in that. Do not push them toward English.
+Write to the person the way a sharp friend who happens to run channels for a living would: plain words, short sentences, no hype. Use their language. If they write in Hindi, Hinglish, Spanish or anything else, reply in that. Do not push them toward English.
+
+The language they chat in is not always the language of their content. Before the first draft (hooks, scripts, captions), ask which language the videos or posts will be in, and draft in that.
 
 ## Running the tools
 
 Use whichever of these your host supports, in this order: the Showrunner MCP tools (named in each skill), then the command line (`python scripts/sr.py <command>`, add `--help` for options), then the by-hand method written in each skill. Every skill is useful without code.
+
+`scripts/sr.py` sits inside each skill's own folder. Run it by its full path (your host tells you where the skill was loaded from), from wherever you are. Do not `cd` into the skill folder first: some hosts, Claude Code among them, block changing into folders outside the project.
 
 If a tool misbehaves or something looks missing, run `doctor`. It checks the engine, the facts data, the playbooks and how many skills it can see. `skill_list` shows what is installed.
 

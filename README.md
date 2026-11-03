@@ -155,9 +155,11 @@ vidIQ offers an MCP connector with keyword and competitor data, which Showrunner
 
 ## What is tested, and what is not
 
-Tested: the engine and tools on Python 3.9 to 3.13 on Linux, with 76 tests. CI runs the same tests, the four repo checks and the zip build on every push, on Linux and on Python 3.12 on Windows and macOS, and all of them must pass. The tests and checks also passed on a Windows 11 machine. The MCP server over stdio and HTTP with a protocol test suite. The ffmpeg commands against a real generated video. The calendar's `.ics` output against a calendar parser. Installing with `pip` and with `install.py` on Linux, and running a single unzipped skill with nothing else installed. Installing the Claude Code plugin from this repo on Windows 11 with Claude Code 2.1.219: the marketplace adds, all 24 skills install and the bundled engine starts.
+Tested: the engine and tools on Python 3.9 to 3.13 on Linux, with 82 tests. CI runs the same tests, the four repo checks and the zip build on every push, on Linux and on Python 3.12 on Windows and macOS, and all of them must pass. The tests and checks also passed on a Windows 11 machine. The MCP server over stdio and HTTP with a protocol test suite. The ffmpeg commands against a real generated video. The calendar's `.ics` output against a calendar parser. Installing with `pip` and with `install.py` on Linux, and running a single unzipped skill with nothing else installed. Installing the Claude Code plugin from this repo on Windows 11 with Claude Code 2.1.219: the marketplace adds, all 24 skills install and the bundled engine starts. `install.py` on Windows for all four targets.
 
-**Not tested by the maintainers:** `install.py` and the plugin install on macOS, `install.py` on Windows, a full Claude Code session using the installed plugin, and loading the skills inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app upload screen. They were written to each tool's published format. If one does not load, open an issue with what you saw.
+A live Claude Code session on Windows (Claude Code 2.1.219, Claude Sonnet 5), with a faceless creator chatting in Hinglish: the intake, the plan, saving the profile, the positioning step, skipping steps, writing and scoring hooks, and a request to post and schedule, which it refused and handed back as a step for the person. That session found six bugs (agents writing `--on-camera no`, `profile save` not taking the intake answers, step ids missing from `playbook show`, a blocked `cd` into the skill folder, too many questions at once, and an unquoted path in `install.py`'s hint). They are fixed and each has a test. Two fresh sessions confirmed four of them in use: the camera answer reached the plan, the profile saved on the first try, questions came at most two to a message, and the engine ran without a blocked `cd`.
+
+**Not tested by the maintainers:** `install.py` and the plugin install on macOS, a playbook run through all its steps, other models than Claude Sonnet 5, and loading the skills inside ChatGPT, Codex, Cursor, Gemini CLI or the Claude app upload screen. Models do not always follow the skills to the letter: in testing it sometimes folded two questions into one, and once turned "people ask me often" into "every day". They were written to each tool's published format. If one does not load, open an issue with what you saw.
 
 ## Contributing
 
@@ -173,7 +175,7 @@ docs/          how it works, honesty notes, ChatGPT setup, launch notes for main
 mcp/           connect the engine as an MCP server; generated tool list
 gpt/           Custom GPT instructions and knowledge file list
 scripts/       validators, generators and the zip builder
-tests/         76 tests
+tests/         82 tests
 .github/       CI, issue and pull request templates
 .claude-plugin/  Claude Code plugin and marketplace manifests
 ```

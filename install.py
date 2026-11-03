@@ -81,9 +81,18 @@ def main() -> int:
             shutil.rmtree(out)
         shutil.copytree(os.path.join(SKILLS, n), out, ignore=ignore)
         shutil.copytree(ENGINE, os.path.join(out, "scripts", "_engine", "showrunner"), ignore=ignore)
-    print("Done. Start a new session in your agent and say: I want to grow my channel.")
-    print("Check the install any time with: python %s doctor" % os.path.join(dest, "showrunner", "scripts", "sr.py"))
+    if "showrunner" in names:
+        print("Done. Start a new session in your agent and say: I want to grow my channel.")
+    else:
+        print("Done. Start a new session in your agent.")
+    print("Check the install any time with: " + check_command(dest, names))
     return 0
+
+
+def check_command(dest, names):
+    """The doctor command for an installed skill, quoted so it survives spaces (C:\\Users\\Jane Doe\\...)."""
+    skill = "showrunner" if "showrunner" in names else names[0]
+    return 'python "%s" doctor' % os.path.join(dest, skill, "scripts", "sr.py")
 
 
 if __name__ == "__main__":
