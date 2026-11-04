@@ -59,6 +59,14 @@ def _data() -> Dict[str, Any]:
         for key in ("dealbreakers", "warnings"):
             for d in _HOOKS[key]:
                 d["_rx"] = re.compile(d["rx"], re.I)
+        # optional "lexicon" in hooks.json (usually from a data pack) adds words to the lists below
+        lex = _HOOKS.get("lexicon", {})
+        more = lambda key: {w.lower() for w in lex.get(key, [])}  # noqa: E731
+        _HOOKS["_lex"] = {
+            "second": SECOND_PERSON | more("second_person"), "first": FIRST_PERSON | more("first_person"),
+            "audience": AUDIENCE | more("audience"), "stakes": STAKES | more("stakes"),
+            "filler": FILLER_OPEN | more("filler_open"), "curiosity": CURIOSITY_RX + list(lex.get("curiosity_rx", [])),
+        }
     return _HOOKS
 
 
@@ -105,6 +113,7 @@ def _component_scores(text: str, platform: str) -> Dict[str, float]:
     t = norm(text)
     toks = _spoken_words(t)
     low = " ".join(toks)
+    lx = _data()["_lex"]
 
     # SPECIFICITY: real numbers, names, acronyms
     weight, _ = concrete_markers(t)
@@ -113,7 +122,7 @@ def _component_scores(text: str, platform: str) -> Dict[str, float]:
     # FRONTLOAD: how many throat-clearing words before the claim
     lead = 0
     for tok in toks[:5]:
-        if tok in FILLER_OPEN:
+        if tok in lx["filler"]:
             lead += 1
         else:
             break
@@ -121,21 +130,21 @@ def _component_scores(text: str, platform: str) -> Dict[str, float]:
 
     # ADDRESS: who is this for
     tokset = set(toks)
-    if tokset & SECOND_PERSON:
+    if tokset & lx["second"]:
         addr = 100.0
-    elif tokset & AUDIENCE:
+    elif tokset & lx["audience"]:
         addr = 85.0
-    elif tokset & FIRST_PERSON:
+    elif tokset & lx["first"]:
         addr = 55.0
     else:
         addr = 20.0
 
     # CURIOSITY: an open loop the viewer wants closed
-    hits = sum(1 for rx in CURIOSITY_RX if re.search(rx, low if rx != r"\?" else t))
+    hits = sum(1 for rx in lx["curiosity"] if re.search(rx, low if rx != r"\?" else t))
     cur = clip(50.0 * hits)
 
     # STAKES: something is lost, saved, risked
-    stake_hits = len({tok for tok in toks if tok in STAKES})
+    stake_hits = len({tok for tok in toks if tok in lx["stakes"]})
     stake_hits += len(re.findall(r"[$€£₹]", t))
     sk = clip(45.0 * stake_hits)
 

@@ -75,6 +75,8 @@ A new fact is one entry in `engine/showrunner/data/facts.json` with a status, a 
 
 A data pack extends the shipped data without forking the engine. It is a folder with a `pack.json` (`id`, `name`, `version`) and any of the data files, for example `hooks.json` or `slop.json`, plus an optional `playbooks/` folder. The engine looks for packs in `engine/showrunner/data/packs/`, in `~/.showrunner/packs` (or `SHOWRUNNER_HOME/packs`), and in the folders listed in `SHOWRUNNER_PACKS`. `doctor` lists the packs in use.
 
+`hooks.json` may also carry a `lexicon` (`second_person`, `first_person`, `audience`, `stakes`, `filler_open`, `curiosity_rx`) that adds words to the hook scorer's built-in lists, so a language pack can score hooks in that language fairly.
+
 Packs only add. Lists are extended and new keys are added, but a pack cannot change a shipped value or replace a shipped playbook. Packs are JSON, never code. A pack's patterns run like the shipped ones, so only install packs you trust.
 
 `SHOWRUNNER_NO_PACKS=1` turns packs off. The generators, the validator and the tests set it, so a pack installed on a maintainer's machine never ends up in generated files. `install.py` and `build_dist.py` leave `data/packs/` out when they copy the engine, and `.gitignore` keeps it out of the repo.

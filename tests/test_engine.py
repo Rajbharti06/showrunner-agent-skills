@@ -388,7 +388,7 @@ class TestDataPacks(unittest.TestCase):
                 json.dump(obj, fh, ensure_ascii=False)
         put("pack.json", {"id": "demo", "name": "Demo pack", "version": "1.0"})
         put("hooks.json", {"dealbreakers": [{"id": "demo-greeting", "rx": r"(?:^|\s)दोस्तों", "message": "Hindi greeting."}],
-                           "version": "pack-cannot-override"})
+                           "lexicon": {"stakes": ["Galti"]}, "version": "pack-cannot-override"})
         put("slop.json", {"replace": {"chaliye shuru karte hain": "", "delve into": "pack-cannot-override"}})
         pb = dict(playbooks.get("profile-makeover"), id="demo-playbook", title="Demo")
         put(os.path.join("playbooks", "demo.json"), pb)
@@ -410,6 +410,7 @@ class TestDataPacks(unittest.TestCase):
         self.assertEqual([p["id"] for p in util.packs()], ["demo"])
         self.assertIn("Hindi greeting.", hooks.score_hook("दोस्तों, सिर्फ 20 रुपये में पोहा")["dealbreakers"])
         self.assertIn("Greeting. Nobody opened the feed to be greeted.", hooks.score_hook("Hey guys, welcome back")["dealbreakers"])
+        self.assertGreater(hooks.score_hook("33 log ek hi galti karte hain")["components"]["stakes"], 0)
         self.assertNotIn("chaliye shuru karte hain", humanize.clean("Toh chaliye shuru karte hain. Poha banate hain.")[0])
         # packs only add: existing values and shipped playbooks stay as they are
         self.assertNotEqual(util.load_data("hooks.json")["version"], "pack-cannot-override")
