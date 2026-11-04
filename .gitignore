@@ -13,3 +13,5 @@ Thumbs.db
 .showrunner/
 # maintainer notes that stay on your machine (launch drafts and similar)
 *.local.md
+# local add-on data packs (Showrunner Pro and similar) never go in this repo
+engine/showrunner/data/packs/

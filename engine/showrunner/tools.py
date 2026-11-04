@@ -18,7 +18,7 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from . import (beats, calibrate, captions, clips, experiments, facts, hooks, humanize, ideas, intake,
                outliers, planner, playbooks, render, retention, srt, store, titles)
-from .util import ToolError, jdump, load_data, read_text, truncate
+from .util import ToolError, jdump, load_data, packs, read_text, truncate
 
 VERSION = "0.1.1"
 MAX_INPUT_CHARS = 1_500_000
@@ -560,6 +560,7 @@ def h_doctor(p):
         ("fact data check", "ok" if not problems else "%d problem(s): %s" % (len(problems), "; ".join(problems[:3]))),
         ("facts without a link", "%d (each is a good first pull request, see CONTRIBUTING.md)" % len(facts.unlinked())),
         ("playbooks", str(len(playbooks.list_all()))),
+        ("data packs", ", ".join("%s %s" % (pk["id"], pk.get("version", "")) for pk in packs()) or "none"),
         ("skills folder", "%s (%d skills)" % (d, n_skills) if d else "not found (fine if you only use the CLI)"),
         ("ffmpeg", shutil.which("ffmpeg") or "not found (only needed to run the clip commands)"),
     ]

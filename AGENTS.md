@@ -41,6 +41,7 @@ Files that start with "Generated from the Showrunner data files" are written by 
 | Platform fit priors | `engine/showrunner/data/fit.json` |
 | Hook shapes | `engine/showrunner/data/hooks.json` |
 | Stock phrases the humanizer cuts | `engine/showrunner/data/slop.json` |
+| Extra data without forking the engine | A data pack, see "Data packs" in `docs/architecture.md`. Never commit one to this repo |
 | A playbook | `engine/showrunner/data/playbooks/<id>.json` (steps use skill names that must exist) |
 | A tool | `engine/showrunner/tools.py` (add the `Tool(...)` entry; CLI and MCP pick it up) |
 | A skill | `skills/<name>/SKILL.md` |

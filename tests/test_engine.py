@@ -375,6 +375,66 @@ class TestFoundInALiveSession(unittest.TestCase):
         self.assertIn("showrunner", install.check_command("x", ["sr-hook", "showrunner"]))
 
 
+class TestDataPacks(unittest.TestCase):
+    """Packs extend the shipped data without forking the engine. They only add, and can be turned off."""
+
+    def setUp(self):
+        from showrunner import humanize
+        self.dir = tempfile.mkdtemp()
+        pack = os.path.join(self.dir, "demo")
+        os.makedirs(os.path.join(pack, "playbooks"))
+        def put(rel, obj):
+            with open(os.path.join(pack, rel), "w", encoding="utf-8") as fh:
+                json.dump(obj, fh, ensure_ascii=False)
+        put("pack.json", {"id": "demo", "name": "Demo pack", "version": "1.0"})
+        put("hooks.json", {"dealbreakers": [{"id": "demo-greeting", "rx": r"(?:^|\s)दोस्तों", "message": "Hindi greeting."}],
+                           "version": "pack-cannot-override"})
+        put("slop.json", {"replace": {"chaliye shuru karte hain": "", "delve into": "pack-cannot-override"}})
+        pb = dict(playbooks.get("profile-makeover"), id="demo-playbook", title="Demo")
+        put(os.path.join("playbooks", "demo.json"), pb)
+        put(os.path.join("playbooks", "clash.json"), dict(pb, id="profile-makeover", title="Pack copy"))
+        os.environ.pop("SHOWRUNNER_NO_PACKS", None)
+        os.environ["SHOWRUNNER_PACKS"] = os.pathsep.join([self.dir, pack])  # the same pack twice loads once
+        hooks._HOOKS = None
+        humanize._LEX = None
+
+    def tearDown(self):
+        from showrunner import humanize
+        os.environ["SHOWRUNNER_NO_PACKS"] = "1"
+        os.environ.pop("SHOWRUNNER_PACKS", None)
+        hooks._HOOKS = None
+        humanize._LEX = None
+
+    def test_pack_adds_rules_phrases_and_playbooks(self):
+        from showrunner import humanize, util
+        self.assertEqual([p["id"] for p in util.packs()], ["demo"])
+        self.assertIn("Hindi greeting.", hooks.score_hook("दोस्तों, सिर्फ 20 रुपये में पोहा")["dealbreakers"])
+        self.assertIn("Greeting. Nobody opened the feed to be greeted.", hooks.score_hook("Hey guys, welcome back")["dealbreakers"])
+        self.assertNotIn("chaliye shuru karte hain", humanize.clean("Toh chaliye shuru karte hain. Poha banate hain.")[0])
+        # packs only add: existing values and shipped playbooks stay as they are
+        self.assertNotEqual(util.load_data("hooks.json")["version"], "pack-cannot-override")
+        self.assertIn("dig into", humanize.clean("We delve into it.")[0])
+        self.assertIn("demo-playbook", [p["id"] for p in playbooks.list_all()])
+        self.assertNotEqual(playbooks.get("profile-makeover")["title"], "Pack copy")
+        self.assertIn("demo 1.0", tools.run("doctor")["text"])
+
+    def test_no_packs_switch_turns_them_off(self):
+        from showrunner import util
+        os.environ["SHOWRUNNER_NO_PACKS"] = "1"
+        hooks._HOOKS = None
+        self.assertEqual(util.packs(), [])
+        self.assertEqual(hooks.score_hook("दोस्तों, सिर्फ 20 रुपये में पोहा")["dealbreakers"], [])
+        self.assertNotIn("demo-playbook", [p["id"] for p in playbooks.list_all()])
+
+    def test_broken_pack_says_which_one(self):
+        from showrunner import util
+        with open(os.path.join(self.dir, "demo", "slop.json"), "w", encoding="utf-8") as fh:
+            fh.write("{not json")
+        with self.assertRaises(ToolError) as cm:
+            util.load_data("slop.json")
+        self.assertIn("demo", str(cm.exception))
+
+
 class TestRepoHealth(unittest.TestCase):
     """Things that kept going wrong while the repo was written: lookups, wording, and drift."""
 

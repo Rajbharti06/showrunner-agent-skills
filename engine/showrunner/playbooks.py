@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from . import store
-from .util import ToolError
+from .util import ToolError, packs
 
 DATA = Path(__file__).resolve().parent / "data" / "playbooks"
 GATE_HELP = {
@@ -27,10 +27,12 @@ GATE_HELP = {
 
 
 def _load_all() -> Dict[str, Dict[str, Any]]:
-    out = {}
-    for p in sorted(DATA.glob("*.json")):
-        d = json.loads(p.read_text(encoding="utf-8"))
-        out[d["id"]] = d
+    out: Dict[str, Dict[str, Any]] = {}
+    folders = [DATA] + [Path(p["path"]) / "playbooks" for p in packs()]
+    for folder in folders:
+        for p in sorted(folder.glob("*.json")):
+            d = json.loads(p.read_text(encoding="utf-8-sig"))
+            out.setdefault(d["id"], d)  # a shipped playbook wins over a pack's with the same id
     return out
 
 

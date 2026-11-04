@@ -30,7 +30,8 @@ TARGETS = {
 
 
 def ignore(_dir, names):
-    return [n for n in names if n == "__pycache__" or n.endswith(".pyc")]
+    # data/packs holds local add-on packs; they are never copied out with the free skills
+    return [n for n in names if n in ("__pycache__", "packs") or n.endswith(".pyc")]
 
 
 def skill_names():

@@ -26,7 +26,7 @@ STAMP = (2026, 1, 1, 0, 0, 0)
 
 def files_under(base):
     for dirpath, dirs, files in os.walk(base):
-        dirs[:] = sorted(d for d in dirs if d != "__pycache__")
+        dirs[:] = sorted(d for d in dirs if d not in ("__pycache__", "packs"))  # local add-on packs never ship
         for fn in sorted(files):
             if fn.endswith(".pyc"):
                 continue

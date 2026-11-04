@@ -265,11 +265,72 @@ def to_float(s: Any, default: Optional[float] = None) -> Optional[float]:
     return v
 
 
+def pack_dirs() -> List[Path]:
+    """Folders of data packs that extend the shipped data, in load order.
+
+    A pack is a folder with a pack.json and any of the data files (hooks.json, slop.json, ...) plus
+    an optional playbooks/ folder. Packs are found in data/packs/ inside the package, in
+    SHOWRUNNER_HOME/packs, and in the folders listed in SHOWRUNNER_PACKS. SHOWRUNNER_NO_PACKS=1
+    turns them off; the repo's generators set it so a pack on a maintainer's machine never leaks
+    into generated files."""
+    if os.environ.get("SHOWRUNNER_NO_PACKS"):
+        return []
+    roots = [Path(__file__).resolve().parent / "data" / "packs",
+             Path(os.environ.get("SHOWRUNNER_HOME") or (Path.home() / ".showrunner")) / "packs"]
+    roots += [Path(p) for p in os.environ.get("SHOWRUNNER_PACKS", "").split(os.pathsep) if p.strip()]
+    out: List[Path] = []
+    for root in roots:
+        if (root / "pack.json").is_file():
+            out.append(root)
+        elif root.is_dir():
+            out.extend(sorted(c for c in root.iterdir() if (c / "pack.json").is_file()))
+    return out
+
+
+def packs() -> List[Dict[str, Any]]:
+    """The data packs in use, one per pack id (the first one found wins)."""
+    out: List[Dict[str, Any]] = []
+    ids = set()
+    for d in pack_dirs():
+        try:
+            meta = json.loads((d / "pack.json").read_text(encoding="utf-8-sig"))
+        except (OSError, ValueError) as e:
+            raise ToolError("Data pack %s has a broken pack.json: %s" % (d, e))
+        pid = str(meta.get("id") or d.name)
+        if pid in ids:
+            continue
+        ids.add(pid)
+        out.append(dict(meta, id=pid, path=str(d)))
+    return out
+
+
+def _merge(base: Any, extra: Any) -> Any:
+    """Packs only add: lists are extended, new keys are added, existing values are kept."""
+    if isinstance(base, dict) and isinstance(extra, dict):
+        for k, v in extra.items():
+            if k not in base:
+                base[k] = v
+            elif isinstance(base[k], (dict, list)):
+                base[k] = _merge(base[k], v)
+        return base
+    if isinstance(base, list) and isinstance(extra, list):
+        return base + extra
+    return base
+
+
 def load_data(name: str) -> Any:
-    """Load a JSON file shipped inside the package's data folder."""
+    """Load a JSON file shipped inside the package's data folder, extended by any data packs."""
     here = Path(__file__).resolve().parent / "data" / name
     with open(here, "r", encoding="utf-8") as fh:
-        return json.load(fh)
+        data = json.load(fh)
+    for p in packs():
+        f = Path(p["path"]) / name
+        if f.is_file():
+            try:
+                data = _merge(data, json.loads(f.read_text(encoding="utf-8-sig")))
+            except ValueError as e:
+                raise ToolError("Data pack %s has a broken %s: %s" % (p["id"], name, e))
+    return data
 
 
 def jdump(obj: Any) -> str:

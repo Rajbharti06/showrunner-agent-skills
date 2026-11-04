@@ -71,6 +71,14 @@ This is the part that most repos of this kind skip, so it has its own file: [hon
 
 A new fact is one entry in `engine/showrunner/data/facts.json` with a status, a link and an `as_of` date, then `python scripts/gen_refs.py` to regenerate the platform guides. A new tool is one entry in `tools.py`. A new skill is a folder with a `SKILL.md`; run `python scripts/sync_shims.py` to copy the runner into it and `python scripts/validate_skills.py` to check it. CONTRIBUTING.md has the full list.
 
+## Data packs
+
+A data pack extends the shipped data without forking the engine. It is a folder with a `pack.json` (`id`, `name`, `version`) and any of the data files, for example `hooks.json` or `slop.json`, plus an optional `playbooks/` folder. The engine looks for packs in `engine/showrunner/data/packs/`, in `~/.showrunner/packs` (or `SHOWRUNNER_HOME/packs`), and in the folders listed in `SHOWRUNNER_PACKS`. `doctor` lists the packs in use.
+
+Packs only add. Lists are extended and new keys are added, but a pack cannot change a shipped value or replace a shipped playbook. Packs are JSON, never code. A pack's patterns run like the shipped ones, so only install packs you trust.
+
+`SHOWRUNNER_NO_PACKS=1` turns packs off. The generators, the validator and the tests set it, so a pack installed on a maintainer's machine never ends up in generated files. `install.py` and `build_dist.py` leave `data/packs/` out when they copy the engine, and `.gitignore` keeps it out of the repo.
+
 ## What is deliberately not here
 
 No platform API clients, no scraping, no scheduling or auto-posting, no stored credentials, and no outbound network calls from the engine. That keeps the install a copy-paste and keeps accounts safe. If you want posting, pair this with a scheduler you trust and let Showrunner decide what to post and when.

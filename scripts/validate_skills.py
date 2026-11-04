@@ -19,6 +19,7 @@ import sys
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 SKILLS = os.path.join(ROOT, "skills")
 sys.path.insert(0, os.path.join(ROOT, "engine"))
+os.environ["SHOWRUNNER_NO_PACKS"] = "1"  # check the free skills against the free data only
 
 from showrunner import cli, facts, tools  # noqa: E402
 
