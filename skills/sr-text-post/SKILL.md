@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. Python 3.9+ for the caption checker and humanizer; the by-hand method below works without them.
 metadata:
   author: Raj Bharti
-  version: "0.1.1"
+  version: "0.1.2"
   family: showrunner
 ---
 

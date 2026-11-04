@@ -20,7 +20,7 @@ from . import (beats, calibrate, captions, clips, experiments, facts, hooks, hum
                outliers, planner, playbooks, render, retention, srt, store, titles)
 from .util import ToolError, jdump, load_data, packs, read_text, truncate
 
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 MAX_INPUT_CHARS = 1_500_000
 
 PLATFORMS = sorted(load_data("fit.json")["platforms"])

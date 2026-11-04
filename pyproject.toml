@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "showrunner-agent-skills"
-version = "0.1.1"
+version = "0.1.2"
 description = "24 Agent Skills and a zero-dependency Python engine and MCP server for growing a channel on YouTube, Instagram, TikTok, Facebook, LinkedIn, X and Threads."
 readme = "README.md"
 requires-python = ">=3.9"

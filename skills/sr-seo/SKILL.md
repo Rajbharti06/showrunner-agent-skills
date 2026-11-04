@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. Web search or a keyword connector helps. Python 3.9+ for the title and caption checks.
 metadata:
   author: Raj Bharti
-  version: "0.1.1"
+  version: "0.1.2"
   family: showrunner
 ---
 

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. No scripts needed; the rubric lives in references/rubric.md.
 metadata:
   author: Raj Bharti
-  version: "0.1.1"
+  version: "0.1.2"
   family: showrunner
 ---
 

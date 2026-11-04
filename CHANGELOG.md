@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 (2026-11-04)
+
+- **Data packs.** A folder with a `pack.json` and any data files (`hooks.json`, `slop.json`, ...) plus an optional `playbooks/` folder now extends the shipped data without forking the engine. Packs are found in `data/packs/`, in `~/.showrunner/packs` and via `SHOWRUNNER_PACKS`, and `doctor` lists them. Packs only add: shipped values and playbooks stay as they are. See "Data packs" in docs/architecture.md.
+- `hooks.json` may carry a `lexicon` that adds words to the hook scorer's lists (stakes, audience, second and first person, filler, curiosity), so a language pack can score hooks in that language fairly. Without a pack, every score is unchanged.
+- `SHOWRUNNER_NO_PACKS=1` turns packs off. The generators, the validator and the tests set it, and `install.py`, `build_dist.py` and `.gitignore` keep local packs out of the free files.
+- 85 tests.
+
 ## 0.1.1 (2026-11-03)
 
 Found by running the plugin in a live Claude Code session on Windows. Each fix has a test.

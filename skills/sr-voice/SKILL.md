@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. Optional Python 3.9+ for the style check; works by hand without it.
 metadata:
   author: Raj Bharti
-  version: "0.1.1"
+  version: "0.1.2"
   family: showrunner
 ---
 

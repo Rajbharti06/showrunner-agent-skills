@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any agent that loads Agent Skills. Python 3.9+ for the clip finder; ffmpeg on the person's machine to run the cut commands (optional, the timestamps work in any editor).
 metadata:
   author: Raj Bharti
-  version: "0.1.1"
+  version: "0.1.2"
   family: showrunner
 ---
 
